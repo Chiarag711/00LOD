@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <?xml-model href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0" type="application/xml"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-  <teiHeader>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0"> 
+  <teiHeader xml:lang="en">
     <fileDesc>
       <titleStmt>
         <title>James Bond Wikipedia Page: Selected Sample TEI Encoding</title>
+        
         <respStmt>
           <resp>selected and annotated by</resp>
-          <persName>chiarag711</persName>
+          <persName>Chiara Genovese</persName>
         </respStmt>
       </titleStmt>
+      
+      
       <publicationStmt>
         <publisher>University of Bologna</publisher>
         <pubPlace>Bologna, Italy</pubPlace>
@@ -18,33 +22,49 @@
           <licence target="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
         </availability>
       </publicationStmt>
+      
       <sourceDesc>
         <bibl xml:id="bond_wikipedia_page">
           <title level="a">James Bond</title>
           <publisher>Wikimedia Foundation</publisher>
           <ptr target="https://en.wikipedia.org/wiki/James_Bond"/>
         </bibl>
-
+        
+        <!--
+             Selected items used in the project.
+             Each item receives a local @xml:id and is reconciled through @sameAs.
+        -->
+        
+        <!-- ITEM 1: Casino Royale -->
         <listBibl type="selected_works">
           <bibl xml:id="casino_royale" type="novel" sameAs="http://www.wikidata.org/entity/Q1047711">
             <title level="m">Casino Royale</title>
             <author ref="#ian_fleming"/>
             <date type="publicationYear" when="1953">1953</date>
+            <idno type="SBN">https://opac.sbn.it/opera/SBL0428596</idno>
           </bibl>
+          
+          <!-- ITEM 2: Dr. No -->
           <bibl xml:id="dr_no" type="film" sameAs="http://www.wikidata.org/entity/Q102754">
             <title level="m">Dr. No</title>
             <date type="releaseYear" when="1962">1962</date>
+            <idno type="SBN">https://opac.sbn.it/opera/TO01587252</idno>
           </bibl>
+          
+          <!-- ITEM 3: James Bond Theme -->
           <bibl xml:id="james_bond_theme" type="musicComposition" sameAs="http://www.wikidata.org/entity/Q746181">
             <title level="m">James Bond Theme</title>
             <date type="publicationYear" when="1962">1962</date>
           </bibl>
+          
+          <!-- ITEM 4: GoldenEye 007 -->
           <bibl xml:id="goldeneye_007" type="videoGame" sameAs="http://www.wikidata.org/entity/Q369086">
             <title level="m">GoldenEye 007</title>
             <date type="releaseYear" when="1997">1997</date>
           </bibl>
         </listBibl>
-
+        
+        <!-- ITEM 5: Aston Martin DB5 -->
         <listObject type="productModels">
           <object xml:id="aston_martin_db5" sameAs="http://www.wikidata.org/entity/Q749871">
             <objectIdentifier>
@@ -52,69 +72,96 @@
             </objectIdentifier>
           </object>
         </listObject>
-
+        
+        <!-- ITEM 6: 2012 Summer Olympics opening ceremony -->
         <listEvent>
-          <event xml:id="olympics_2012_opening" sameAs="http://www.wikidata.org/entity/Q168545">
+          <event xml:id="olympics_2012_opening" 
+                 sameAs="http://www.wikidata.org/entity/Q168545"
+                 type="sportingEvent"
+                 when="2012-07-27">
             <label>2012 Summer Olympics opening ceremony</label>
-            <date when="2012-07-27">27 July 2012</date>
           </event>
         </listEvent>
-
+        
         <list type="concepts_and_textual_phenomena">
+          <!-- ITEM 7: Bond girl -->
           <item xml:id="bond_girl" sameAs="http://www.wikidata.org/entity/Q1649366">
             <term>Bond girl</term>
           </item>
+          
+          <!-- ITEM 8: Bond, James Bond (catchphrase) -->
           <item xml:id="bond_james_bond" sameAs="http://www.wikidata.org/entity/Q141193252">
             <quote>Bond, James Bond</quote>
           </item>
+          
+          <!-- Category of item 4: GoldenEye 007 -->
           <item xml:id="first_person_shooter" sameAs="http://www.wikidata.org/entity/Q185029">
             <term>First-person shooter</term>
           </item>
         </list>
-
+        
+        <!--
+             RELATION LIST
+             Makes explicit selected semantic relations from the conceptual model.
+             
+             @active  = subject of the relation
+             @name    = RDF/ontology property
+             @passive = object or class
+        -->
+        
         <listRelation>
-          <relation active="#james_bond" name="rdf:type" passive="dbo:FictionalCharacter"/>
-          <relation active="#ian_fleming" name="rdf:type" passive="schema:Person"/>
-          <relation active="#mi6" name="rdf:type" passive="dbo:GovernmentAgency"/>
-          <relation active="#casino_royale" name="rdf:type" passive="dbo:Novel"/>
-          <relation active="#dr_no" name="rdf:type" passive="dbo:Film"/>
-          <relation active="#james_bond_theme" name="rdf:type" passive="schema:MusicComposition"/>
-          <relation active="#aston_martin_db5" name="rdf:type" passive="schema:ProductModel"/>
-          <relation active="#bond_girl" name="rdf:type" passive="bond:StockCharacter"/>
-          <relation active="#bond_james_bond" name="rdf:type" passive="bond:Catchphrase"/>
-          <relation active="#goldeneye_007" name="rdf:type" passive="schema:VideoGame"/>
-          <relation active="#olympics_2012_opening" name="rdf:type" passive="dcmitype:Event"/>
-          <relation active="#james_bond" name="dcterms:creator" passive="#ian_fleming"/>
-          <relation active="#casino_royale" name="dcterms:creator" passive="#ian_fleming"/>
-          <relation active="#james_bond" name="dbo:affiliation" passive="#mi6"/>
-          <relation active="#dr_no" name="schema:character" passive="#james_bond"/>
-          <relation active="#goldeneye_007" name="dcterms:type" passive="#first_person_shooter"/>
-          <relation active="#bond_girl" name="bond:hasRelatedCharacter" passive="#james_bond"/>
-          <relation active="#bond_james_bond" name="schema:spokenByCharacter" passive="#james_bond"/>
-          <relation active="#olympics_2012_opening" name="dcterms:references" passive="#james_bond"/>
+          <!-- RDF types assigned to the selected local entities. -->
+          <relation active="#james_bond" name="rdf:type" passive="dbo:FictionalCharacter" />
+          <relation active="#ian_fleming" name="rdf:type" passive="schema:Person" />
+          <relation active="#mi6" name="rdf:type" passive="dbo:GovernmentAgency" />
+          <relation active="#casino_royale" name="rdf:type" passive="dbo:Novel" />
+          <relation active="#dr_no" name="rdf:type" passive="dbo:Film" />
+          <relation active="#james_bond_theme" name="rdf:type" passive="schema:MusicComposition" />
+          <relation active="#aston_martin_db5" name="rdf:type" passive="schema:ProductModel" />
+          <relation active="#bond_girl" name="rdf:type" passive="bond:StockCharacter" />
+          <relation active="#bond_james_bond" name="rdf:type" passive="bond:Catchphrase" />
+          <relation active="#goldeneye_007" name="rdf:type" passive="schema:VideoGame" />
+          <relation active="#olympics_2012_opening" name="rdf:type" passive="dcmitype:Event" />
+          
+          <!-- Selected relations already defined in the conceptual model. -->
+          <relation active="#james_bond" name="dcterms:creator" passive="#ian_fleming" />
+          <relation active="#casino_royale" name="dcterms:creator" passive="#ian_fleming" />
+          <relation active="#james_bond" name="dbo:affiliation" passive="#mi6" />
+          <relation active="#dr_no" name="schema:character" passive="#james_bond" />
+          <relation active="#goldeneye_007" name="dcterms:type" passive="#first_person_shooter" />
+          <relation active="#bond_girl" name="bond:hasRelatedCharacter" passive="#james_bond" />
+          <relation active="#bond_james_bond" name="schema:spokenByCharacter" passive="#james_bond" />
+          <relation active="#olympics_2012_opening" name="dcterms:references" passive="#james_bond" />
         </listRelation>
       </sourceDesc>
     </fileDesc>
-
+    
     <profileDesc>
       <particDesc>
         <listPerson type="real">
+          <!-- ITEM 9: Ian Fleming -->
           <person xml:id="ian_fleming" sameAs="http://viaf.org/viaf/51689472" role="author">
             <persName>
               <forename>Ian</forename>
               <surname>Fleming</surname>
             </persName>
+            <idno type="SBN">http://id.sbn.it/bid/CFIV017252</idno>
           </person>
         </listPerson>
+        
         <listPerson type="fictional">
+          <!-- ITEM 10: James Bond (fictional character) -->
           <person xml:id="james_bond" sameAs="http://www.wikidata.org/entity/Q2009573" role="fictionalCharacter">
             <persName>
               <forename>James</forename>
               <surname>Bond</surname>
             </persName>
+            
             <idno type="codeNumber">007</idno>
           </person>
         </listPerson>
+        
+        <!-- ITEM 11: MI6 (government agency) -->
         <listOrg>
           <org xml:id="mi6" sameAs="http://www.wikidata.org/entity/Q184560" type="governmentAgency">
             <orgName>Secret Intelligence Service</orgName>
@@ -122,111 +169,117 @@
           </org>
         </listOrg>
       </particDesc>
-
+      
       <textClass>
+        <!-- Library of Congress Genre/Form Terms. -->
         <keywords scheme="http://id.loc.gov/authorities/genreForms/">
           <term ref="http://id.loc.gov/authorities/genreForms/gf2014026555">Spy fiction</term>
           <term ref="http://id.loc.gov/authorities/genreForms/gf2011026604">Spy films</term>
           <term ref="http://id.loc.gov/authorities/genreForms/gf2014026950">Motion picture music</term>
         </keywords>
+        
+        <!-- Wikidata classification used for the video-game genre. -->
         <keywords scheme="http://www.wikidata.org/entity/">
           <term ref="http://www.wikidata.org/entity/Q185029">First-person shooter</term>
         </keywords>
       </textClass>
     </profileDesc>
-
+    
     <encodingDesc>
-      <editorialDecl>
-        <p>This TEI document encodes selected excerpts from the English Wikipedia article "James Bond". Internal Wikipedia hyperlinks and citation-note markers have not been reproduced. Omitted passages are represented with gap elements whose reason is sampling. Selected entities are linked to local identifiers and reconciled with external authority URIs.</p>
-      </editorialDecl>
-
+      <projectDesc>
+        <p>This TEI/XML document contains selected excerpts from the English Wikipedia article "James Bond". The excerpts were selected for their relevance to the project research question, "How did James Bond become a cultural icon?", and to the entities and concepts represented in the 00LOD project. Omitted passages within or between selected excerpts are marked in the text with <gi>gap</gi> elements with the attribute reason="sampling".</p>
+      </projectDesc>
+      
       <listPrefixDef>
+        <!-- Local 00LOD BondOntology namespace. -->
         <prefixDef ident="bond" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://chiarag711.github.io/00LOD/ontology/BondOntology#$1">
           <p>00LOD Bond Ontology</p>
         </prefixDef>
+        
         <prefixDef ident="dbo" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://dbpedia.org/ontology/$1">
           <p>DBpedia Ontology</p>
         </prefixDef>
+        
         <prefixDef ident="schema" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://schema.org/$1">
           <p>Schema.org</p>
         </prefixDef>
         <prefixDef ident="dcterms" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/terms/$1">
           <p>Dublin Core Terms</p>
         </prefixDef>
+        
         <prefixDef ident="dcmitype" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/dcmitype/$1">
           <p>DCMI Type Vocabulary</p>
         </prefixDef>
+        
         <prefixDef ident="rdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/1999/02/22-rdf-syntax-ns#$1">
           <p>RDF Vocabulary</p>
         </prefixDef>
       </listPrefixDef>
     </encodingDesc>
   </teiHeader>
-
-  <text>
+  
+  <text xml:lang="en">
     <body>
+      <!-- ============================= INTRODUCTION ============================ -->
       <div type="section" xml:id="intro">
         <head>James Bond</head>
-
         <p>The <emph>James Bond</emph> franchise focuses on the character of <persName ref="#james_bond">James Bond</persName>, a fictional <orgName ref="#mi6">British Secret Service</orgName> agent created in 1953 by writer <persName ref="#ian_fleming">Ian Fleming</persName>, who featured him in twelve novels and two short-story collections. Since Fleming's death in 1964, nine other authors have written authorised Bond novels or novelisations: Kingsley Amis, Christopher Wood, John Gardner, Raymond Benson, Sebastian Faulks, Jeffery Deaver, William Boyd, Anthony Horowitz and Charlie Higson. The latest novel is <title>On His Majesty's Secret Service</title> by Charlie Higson, published in May 2023. Charlie Higson wrote a series on a young James Bond, and Kate Westbrook wrote three novels based on the diaries of a recurring series character, Moneypenny.</p>
-
         <p>The character—also known by the code number <num type="codeNumber" corresp="#james_bond">007</num> (pronounced "double-oh-seven")—has also been adapted for television, radio, comic strips, video games and film. The <emph>James Bond</emph> franchise is one of the highest-grossing media franchises of all time. The films constitute one of the longest continually running film series and have grossed over US$7.04 billion in total at the box office, making <emph>James Bond</emph> the fifth-highest-grossing film series to date. It started in 1962 with <title ref="#dr_no">Dr. No</title>, starring Sean Connery as <persName ref="#james_bond">Bond</persName>. As of 2021, there have been twenty-five films in the Eon Productions series.</p>
-
         <p>The Bond films are renowned for a number of features, including their soundtracks; three of the movies' theme songs have received Academy Awards and others have received nominations. Other important elements which run through most of the films include Bond's cars, his guns, and the gadgets with which he is supplied by Q Branch. The films are also noted for Bond's relationships with various women, who are popularly referred to as "<term ref="#bond_girl">Bond girls</term>".</p>
       </div>
-
+      
+      <!-- =================== PUBLICATION HISTORY / CREATION AND INSPIRATION =================== -->
       <div type="section" xml:id="publication_history">
         <head>Publication history</head>
-
         <div type="subsection" xml:id="creation_inspiration">
           <head>Creation and inspiration</head>
-
-          <p><persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
-
-          <gap reason="sampling"/>
-
-          <p>Fleming decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title ref="#casino_royale">Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q></p>
+          <p>
+            <persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
+          <gap reason="sampling" />
+          <p>Fleming decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title>Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q>
+          </p>
         </div>
       </div>
-
-      <gap reason="sampling"/>
-
+      
+      
+      <gap reason="sampling" />
+      
+      <!-- =================== MUSIC =================== -->
       <div type="section" xml:id="music">
         <head>Music</head>
         <p>The "<title ref="#james_bond_theme">James Bond Theme</title>" was written by Monty Norman and was first orchestrated by the John Barry Orchestra for 1962's <title ref="#dr_no">Dr. No</title>, although the actual authorship of the music has been a matter of controversy for many years.</p>
       </div>
-
-      <gap reason="sampling"/>
-
+      
+      <gap reason="sampling" />
+      
+      <!-- =================== VIDEO GAMES =================== -->
       <div type="section" xml:id="video_games">
         <head>Video games</head>
         <p>In 1983, the first Bond video game <title>James Bond 007</title>, developed and published by Parker Brothers, was released for the Atari 2600, Atari 5200, Atari 8-bit computers, Commodore 64, and ColecoVision. Since then, there have been numerous video games either based on the films or using original storylines. In 1997, the <term ref="#first_person_shooter">first-person shooter</term> video game <title ref="#goldeneye_007">GoldenEye 007</title> was developed by Rare for the Nintendo 64, based on <title>GoldenEye</title>. The game received highly positive reviews, won the BAFTA Interactive Entertainment Award for UK Developer of the Year in 1998, and sold over eight million copies worldwide, grossing $250 million, making it the third-best-selling Nintendo 64 game. It is frequently cited as one of the greatest video games of all time.</p>
       </div>
-
-      <gap reason="sampling"/>
-
+      
+      <gap reason="sampling" />
+      
+      <!-- =================== VEHICLES =================== -->
       <div type="section" xml:id="vehicles">
         <head>Vehicles</head>
         <p>Bond's most famous car is the silver grey <objectName ref="#aston_martin_db5">Aston Martin DB5</objectName>, first seen in <title>Goldfinger</title>; it later featured in <title>Thunderball</title>, <title>GoldenEye</title>, <title>Tomorrow Never Dies</title>, <title ref="#casino_royale">Casino Royale</title>, <title>Skyfall</title> and <title>Spectre</title>.</p>
       </div>
-
-      <gap reason="sampling"/>
-
+      
+      <gap reason="sampling" />
+      
+      <!-- =================== CULTURAL IMPACT =================== -->
       <div type="section" xml:id="cultural_impact">
         <head>Cultural impact</head>
-
+        
         <p>Cinematically, <persName ref="#james_bond">Bond</persName> has been a major influence within the spy genre since the release of <title ref="#dr_no">Dr. No</title> in 1962, with 22 secret agent films released in 1966 alone attempting to capitalise on the Bond franchise's popularity and success. The first parody was the 1964 film <title>Carry On Spying</title>, which shows the villain Dr. Crow being overcome by agents who included James Bind and Daphne Honeybutt. One of the films that reacted against the portrayal of Bond was the Harry Palmer series, whose first film, <title>The Ipcress File</title>, starring Michael Caine, was released in 1965. The eponymous hero is a rough-edged, petty crook turned spy, and was what academic Jeremy Packer called an <q>"anti-Bond"</q>, or what Christoph Lindner calls <q>"the thinking man's Bond"</q>. The Palmer series were produced by Harry Saltzman, who also used key crew members from the Bond series, including designer Ken Adam, editor Peter R. Hunt and composer John Barry. The four Matt Helm films starring Dean Martin (released between 1966 and 1969), the Flint series starring James Coburn (comprising two films, one each in 1966 and 1967), while <title>The Man from U.N.C.L.E.</title> also moved onto the cinema screen, with eight films released: all were testaments to Bond's prominence in popular culture. More recently, the <title>Austin Powers</title> series by writer, producer and comedian Mike Myers, and other parodies such as the <title>Johnny English</title> trilogy of films, have also used elements from or parodied the Bond films.</p>
-
         <p>Following the release of the film <title ref="#dr_no">Dr. No</title> in 1962, the line <q type="catchphrase" corresp="#bond_james_bond">"Bond ... James Bond"</q>, became a catch phrase that entered the lexicon of Western popular culture: writers John Cork and Bruce Scivally said of the introduction in <title ref="#dr_no">Dr. No</title> that the <q>"signature introduction would become the most famous and loved film line ever"</q>. In 2001, it was voted as the <q>"best-loved one-liner in cinema"</q> by British cinema goers, and in 2005, it was honoured as the 22nd greatest quotation in cinema history by the American Film Institute as part of their 100 Years Series. A 2024 survey by online investment advisor and digital wealth management company MoneyFarm found that 70 per cent of Brits said they associated the word "bond" with <persName ref="#james_bond">James Bond</persName>, rather than the savings product of the same name.</p>
-
         <p>The 2005 American Film Institute's 100 Years series recognised the character of <persName ref="#james_bond">James Bond</persName> himself as the third greatest film hero. He was also placed at number 11 on a similar list by <title>Empire</title> and as the fifth greatest movie character of all time by <title>Premiere</title>. In 1965, <title>Time</title> magazine observed <q>"James Bond has developed into the biggest mass-cult hero of the decade"</q>.</p>
-
         <p>The 25 James Bond films produced by Eon are the longest continually running film series of all time, and including the two non Eon produced films, the 27 Bond films have grossed over $7.04 billion in total, making it the sixth-highest-grossing franchise to date. It is estimated that since <title ref="#dr_no">Dr. No</title>, a quarter of the world's population have seen at least one Bond film. The UK Film Distributors' Association have stated that the importance of the Bond series of films to the British film industry cannot be overstated, as they <q>"form the backbone of the industry"</q>.</p>
-
-        <gap reason="sampling"/>
-
+        
+        <gap reason="sampling" />
+        
         <p>Considered a British cultural icon, <persName ref="#james_bond">James Bond</persName> had become such a symbol of the United Kingdom that the character, played by Craig, appeared in the <rs type="event" ref="#olympics_2012_opening">opening ceremony of the 2012 London Olympics</rs> as Queen Elizabeth II's escort. From 1968 to 2003, and since 2016, the Cadbury chocolate box Milk Tray has been advertised by the 'Milk Tray Man', a tough James Bond–style figure who undertakes daunting 'raids' to surreptitiously deliver a box of Milk Tray chocolates to a lady. Bond has been commemorated numerous times on a UK postage stamp issued by the Royal Mail, most recently in their March 2020 series to mark the 25th Bond film release.</p>
-
         <p>Throughout the life of the film series, a number of tie-in products have been released. <q>"Bondmania"</q>, a term deriving from the adjacent <q>"Beatlemania"</q> and initiated in 1964 following the enormous success of <title>Goldfinger</title>, described the clamour for Bond films and their related products, from soundtrack LPs to children's toys, board games, alarm clocks playing the Bond theme, and 007-branded shirts. In 2018, a James Bond museum opened atop the Austrian Alps. The futuristic museum is constructed on the summit of Gaislachkogl Mountain in Sölden at 10,000 ft (3,048 m) above sea level.</p>
       </div>
     </body>
