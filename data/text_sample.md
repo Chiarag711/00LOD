@@ -13,6 +13,8 @@ The *James Bond* franchise focuses on the character of James Bond, a fictional B
 
 The character—also known by the code number 007 (pronounced "double-oh-seven")—has also been adapted for television, radio, comic strips, video games and film. The *James Bond* franchise is one of the highest-grossing media franchises of all time. The films constitute one of the longest continually running film series and have grossed over US$7.04 billion in total at the box office, making *James Bond* the fifth-highest-grossing film series to date. It started in 1962 with *Dr. No*, starring Sean Connery as Bond. As of 2021, there have been twenty-five films in the Eon Productions series.
 
+[...]
+
 The Bond films are renowned for a number of features, including their soundtracks; three of the movies' theme songs have received Academy Awards and others have received nominations. Other important elements which run through most of the films include Bond's cars, his guns, and the gadgets with which he is supplied by Q Branch. The films are also noted for Bond's relationships with various women, who are popularly referred to as "Bond girls".
 
 ## Publication history
@@ -40,6 +42,8 @@ In 1983, the first Bond video game *James Bond 007*, developed and published by 
 [...]
 
 ## Vehicles
+
+[...]
 
 Bond's most famous car is the silver grey Aston Martin DB5, first seen in *Goldfinger*; it later featured in *Thunderball*, *GoldenEye*, *Tomorrow Never Dies*, *Casino Royale*, *Skyfall* and *Spectre*.
 
