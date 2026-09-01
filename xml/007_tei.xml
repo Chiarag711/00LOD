@@ -247,8 +247,12 @@
     
     <encodingDesc>
       <projectDesc>
-        <p>This TEI/XML document contains selected excerpts from the English Wikipedia article "James Bond". The excerpts were selected for their relevance to the project research question, "How did James Bond become a cultural icon?", and to the entities and concepts represented in the 00LOD project. Omitted passages within or between selected excerpts are marked in the text with <gi>gap</gi> elements with the attribute reason="sampling".</p>
+        <p>This TEI/XML document was created for the 00LOD project and focuses on the research question "How did James Bond become a cultural icon?".</p>
       </projectDesc>
+      
+      <samplingDecl>
+        <p>Selected excerpts from the English Wikipedia article "James Bond" were encoded according to their relevance to the research question and to the entities and concepts represented in the project. Omitted passages are marked with <gi>gap</gi> elements with reason="sampling".</p>
+      </samplingDecl>
       
       <listPrefixDef>
         <!-- Local 00LOD BondOntology namespace. -->
