@@ -28,6 +28,7 @@
           <title level="a">James Bond</title>
           <publisher>Wikimedia Foundation</publisher>
           <ptr target="https://en.wikipedia.org/wiki/James_Bond"/>
+          <date type="accessed" when="2026-09-01">1 September 2026</date>
         </bibl>
         
         <!--
@@ -48,6 +49,10 @@
           <bibl xml:id="dr_no" type="film" sameAs="http://www.wikidata.org/entity/Q102754">
             <title level="m">Dr. No</title>
             <date type="releaseYear" when="1962">1962</date>
+            <respStmt>
+              <resp>director</resp>
+              <persName>Terence Young</persName>
+            </respStmt>
             <idno type="SBN">https://opac.sbn.it/opera/TO01587252</idno>
           </bibl>
           
@@ -55,12 +60,20 @@
           <bibl xml:id="james_bond_theme" type="musicComposition" sameAs="http://www.wikidata.org/entity/Q746181">
             <title level="m">James Bond Theme</title>
             <date type="publicationYear" when="1962">1962</date>
+            <respStmt>
+              <resp>composer</resp>
+              <persName>Monty Norman</persName>
+            </respStmt>
           </bibl>
           
           <!-- ITEM 4: GoldenEye 007 -->
           <bibl xml:id="goldeneye_007" type="videoGame" sameAs="http://www.wikidata.org/entity/Q369086">
             <title level="m">GoldenEye 007</title>
             <date type="releaseYear" when="1997">1997</date>
+            <respStmt>
+              <resp>developer</resp>
+              <name>Rare</name>
+            </respStmt>
           </bibl>
         </listBibl>
         
@@ -93,16 +106,11 @@
           <item xml:id="bond_james_bond" sameAs="http://www.wikidata.org/entity/Q141193252">
             <quote>Bond, James Bond</quote>
           </item>
-          
-          <!-- Category of item 4: GoldenEye 007 -->
-          <item xml:id="first_person_shooter" sameAs="http://www.wikidata.org/entity/Q185029">
-            <term>First-person shooter</term>
-          </item>
         </list>
         
         <!--
              RELATION LIST
-             Makes explicit selected semantic relations from the conceptual model.
+             Makes explicit the semantic relations from the conceptual model that apply to the selected TEI entities.
              
              @active  = subject of the relation
              @name    = RDF/ontology property
@@ -110,28 +118,67 @@
         -->
         
         <listRelation>
-          <!-- RDF types assigned to the selected local entities. -->
-          <relation active="#james_bond" name="rdf:type" passive="dbo:FictionalCharacter" />
-          <relation active="#ian_fleming" name="rdf:type" passive="schema:Person" />
-          <relation active="#mi6" name="rdf:type" passive="dbo:GovernmentAgency" />
-          <relation active="#casino_royale" name="rdf:type" passive="dbo:Novel" />
-          <relation active="#dr_no" name="rdf:type" passive="dbo:Film" />
-          <relation active="#james_bond_theme" name="rdf:type" passive="schema:MusicComposition" />
-          <relation active="#aston_martin_db5" name="rdf:type" passive="schema:ProductModel" />
-          <relation active="#bond_girl" name="rdf:type" passive="bond:StockCharacter" />
-          <relation active="#bond_james_bond" name="rdf:type" passive="bond:Catchphrase" />
-          <relation active="#goldeneye_007" name="rdf:type" passive="schema:VideoGame" />
-          <relation active="#olympics_2012_opening" name="rdf:type" passive="dcmitype:Event" />
           
-          <!-- Selected relations already defined in the conceptual model. -->
-          <relation active="#james_bond" name="dcterms:creator" passive="#ian_fleming" />
-          <relation active="#casino_royale" name="dcterms:creator" passive="#ian_fleming" />
-          <relation active="#james_bond" name="dbo:affiliation" passive="#mi6" />
-          <relation active="#dr_no" name="schema:character" passive="#james_bond" />
-          <relation active="#goldeneye_007" name="dcterms:type" passive="#first_person_shooter" />
-          <relation active="#bond_girl" name="bond:hasRelatedCharacter" passive="#james_bond" />
-          <relation active="#bond_james_bond" name="schema:spokenByCharacter" passive="#james_bond" />
-          <relation active="#olympics_2012_opening" name="dcterms:references" passive="#james_bond" />
+          <!-- ============== RDF TYPES OF THE SELECTED ENTITIES ============== -->
+          
+          <relation active="#james_bond" name="rdf:type" passive="dbo:FictionalCharacter"/>
+          <relation active="#ian_fleming" name="rdf:type" passive="schema:Person"/>
+          <relation active="#mi6" name="rdf:type" passive="dbo:GovernmentAgency"/>
+          <relation active="#casino_royale" name="rdf:type" passive="dbo:Novel"/>
+          <relation active="#dr_no" name="rdf:type" passive="dbo:Film"/>
+          <relation active="#james_bond_theme" name="rdf:type" passive="schema:MusicComposition"/>
+          <relation active="#aston_martin_db5" name="rdf:type" passive="schema:ProductModel"/>
+          <relation active="#bond_girl" name="rdf:type" passive="bond:StockCharacter"/>
+          <relation active="#bond_james_bond" name="rdf:type" passive="bond:Catchphrase"/>
+          <relation active="#goldeneye_007" name="rdf:type" passive="schema:VideoGame"/>
+          <relation active="#olympics_2012_opening" name="rdf:type" passive="dcmitype:Event"/>
+          
+          <!-- ============== RDF TYPES OF GENRE ==============-->
+          
+          <relation active="#spy_fiction" name="rdf:type" passive="madsrdf:GenreForm"/>
+          <relation active="#spy_films" name="rdf:type" passive="madsrdf:GenreForm"/>
+          <relation active="#motion_picture_music" name="rdf:type" passive="madsrdf:GenreForm"/>
+          <relation active="#first_person_shooter" name="rdf:type" passive="madsrdf:GenreForm"/>
+          
+          <!-- ============== ORIGINS ============== -->
+          
+          <relation active="#james_bond" name="dcterms:creator" passive="#ian_fleming"/>
+          <relation active="#casino_royale" name="dcterms:creator" passive="#ian_fleming"/>
+          <relation active="#james_bond" name="wdt:P4584" passive="#casino_royale"/>
+          
+          <!-- ============== INSTITUTIONAL IDENTITY ============== -->
+          
+          <relation active="#james_bond" name="dbo:affiliation" passive="#mi6"/>
+          
+          <!-- ============== APPEARANCES AND CHARACTER SYSTEM ============== -->
+          
+          <relation active="#dr_no" name="schema:character" passive="#james_bond"/>
+          <relation active="#goldeneye_007" name="schema:character" passive="#james_bond"/>
+          <relation active="#bond_girl" name="bond:hasRelatedCharacter" passive="#james_bond"/>
+          <relation active="#casino_royale" name="bond:featuresNarrativeRole" passive="#bond_girl"/>
+          <relation active="#dr_no" name="bond:featuresNarrativeRole" passive="#bond_girl"/>
+          
+          <!-- ============== MATERIAL AND AUDIOVISUAL IDENTITY ============== -->
+          
+          <relation active="#james_bond" name="edm:isRelatedTo" passive="#aston_martin_db5"/>
+          <relation active="#james_bond" name="bond:hasMusicalMarker" passive="#james_bond_theme"/>
+          <relation active="#dr_no" name="rdau:P60732" passive="#james_bond_theme"/>
+          
+          <!-- ============== VERBAL IDENTITY ============== -->
+          
+          <relation active="#bond_james_bond" name="schema:spokenByCharacter" passive="#james_bond"/>
+          
+          <!-- ============== CULTURAL AFTERLIFE ============== -->
+          
+          <relation active="#olympics_2012_opening" name="dcterms:references" passive="#james_bond"/>
+          
+          <!-- ============== GENRE CLASSIFICATION ============== -->
+          
+          <relation active="#casino_royale" name="dcterms:type" passive="#spy_fiction"/>
+          <relation active="#dr_no" name="dcterms:type" passive="#spy_films"/>
+          <relation active="#james_bond_theme" name="dcterms:type" passive="#motion_picture_music"/>
+          <relation active="#goldeneye_007" name="dcterms:type" passive="#first_person_shooter"/>
+          
         </listRelation>
       </sourceDesc>
     </fileDesc>
@@ -145,6 +192,16 @@
               <forename>Ian</forename>
               <surname>Fleming</surname>
             </persName>
+            
+            <birth when="1908-05-28">
+              <placeName>London</placeName>
+            </birth>
+            
+            <death when="1964-08-12">
+              <placeName>Canterbury</placeName>
+            </death>
+            
+            <occupation>Writer</occupation>
             <idno type="SBN">http://id.sbn.it/bid/CFIV017252</idno>
           </person>
         </listPerson>
@@ -156,7 +213,9 @@
               <forename>James</forename>
               <surname>Bond</surname>
             </persName>
-            
+
+            <occupation>Secret Service agent</occupation>
+            <affiliation ref="#mi6">MI6</affiliation>
             <idno type="codeNumber">007</idno>
           </person>
         </listPerson>
@@ -166,6 +225,7 @@
           <org xml:id="mi6" sameAs="http://www.wikidata.org/entity/Q184560" type="governmentAgency">
             <orgName>Secret Intelligence Service</orgName>
             <orgName type="alternative">MI6</orgName>
+            <country>United Kingdom</country>
           </org>
         </listOrg>
       </particDesc>
@@ -173,14 +233,14 @@
       <textClass>
         <!-- Library of Congress Genre/Form Terms. -->
         <keywords scheme="http://id.loc.gov/authorities/genreForms/">
-          <term ref="http://id.loc.gov/authorities/genreForms/gf2014026555">Spy fiction</term>
-          <term ref="http://id.loc.gov/authorities/genreForms/gf2011026604">Spy films</term>
-          <term ref="http://id.loc.gov/authorities/genreForms/gf2014026950">Motion picture music</term>
+          <term xml:id="spy_fiction" ref="http://id.loc.gov/authorities/genreForms/gf2014026555">Spy fiction</term>
+          <term xml:id="spy_films" ref="http://id.loc.gov/authorities/genreForms/gf2011026604">Spy films</term>
+          <term xml:id="motion_picture_music" ref="http://id.loc.gov/authorities/genreForms/gf2014026950">Motion picture music</term>
         </keywords>
         
         <!-- Wikidata classification used for the video-game genre. -->
         <keywords scheme="http://www.wikidata.org/entity/">
-          <term ref="http://www.wikidata.org/entity/Q185029">First-person shooter</term>
+          <term xml:id="first_person_shooter" ref="http://www.wikidata.org/entity/Q185029">First-person shooter</term>
         </keywords>
       </textClass>
     </profileDesc>
@@ -203,6 +263,7 @@
         <prefixDef ident="schema" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://schema.org/$1">
           <p>Schema.org</p>
         </prefixDef>
+        
         <prefixDef ident="dcterms" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/terms/$1">
           <p>Dublin Core Terms</p>
         </prefixDef>
@@ -213,6 +274,22 @@
         
         <prefixDef ident="rdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/1999/02/22-rdf-syntax-ns#$1">
           <p>RDF Vocabulary</p>
+        </prefixDef>
+        
+        <prefixDef ident="wdt" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.wikidata.org/prop/direct/$1">
+          <p>Wikidata Direct Properties</p>
+        </prefixDef>
+        
+        <prefixDef ident="rdau" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://rdaregistry.info/Elements/u/$1">
+          <p>RDA Unconstrained Properties</p>
+        </prefixDef>
+        
+        <prefixDef ident="edm" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.europeana.eu/schemas/edm/$1">
+          <p>Europeana Data Model</p>
+        </prefixDef>
+        
+        <prefixDef ident="madsrdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.loc.gov/mads/rdf/v1#$1">
+          <p>MADS/RDF Vocabulary</p>
         </prefixDef>
       </listPrefixDef>
     </encodingDesc>
@@ -236,11 +313,10 @@
           <p>
             <persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
           <gap reason="sampling" />
-          <p>Fleming decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title>Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q>
+          <p>Fleming decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title ref="#casino_royale">Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q>
           </p>
         </div>
       </div>
-      
       
       <gap reason="sampling" />
       
@@ -263,7 +339,7 @@
       <!-- =================== VEHICLES =================== -->
       <div type="section" xml:id="vehicles">
         <head>Vehicles</head>
-        <p>Bond's most famous car is the silver grey <objectName ref="#aston_martin_db5">Aston Martin DB5</objectName>, first seen in <title>Goldfinger</title>; it later featured in <title>Thunderball</title>, <title>GoldenEye</title>, <title>Tomorrow Never Dies</title>, <title ref="#casino_royale">Casino Royale</title>, <title>Skyfall</title> and <title>Spectre</title>.</p>
+        <p>Bond's most famous car is the silver grey <objectName ref="#aston_martin_db5">Aston Martin DB5</objectName>, first seen in <title>Goldfinger</title>; it later featured in <title>Thunderball</title>, <title>GoldenEye</title>, <title>Tomorrow Never Dies</title>, <title>Casino Royale</title>, <title>Skyfall</title> and <title>Spectre</title>.</p>
       </div>
       
       <gap reason="sampling" />
