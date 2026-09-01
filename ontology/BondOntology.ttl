@@ -1,0 +1,320 @@
+@prefix : <https://chiarag711.github.io/00LOD/ontology/BondOntology#> .
+@prefix bond: <https://chiarag711.github.io/00LOD/ontology/BondOntology#> .
+
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix foodon: <http://purl.obolibrary.org/obo/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@base <https://chiarag711.github.io/00LOD/ontology/BondOntology#> .
+
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://chiarag711.github.io/00LOD/ontology/BondOntology#>
+    rdf:type owl:Ontology ;
+    rdfs:label "BondOntology"@en ;
+    rdfs:comment "This ontology was created for the 00LOD: Licence to Link project and models entities and relationships relevant to the cultural iconicity of James Bond."@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### DBpedia
+
+dbo:affiliation
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain dbo:FictionalCharacter ;
+    rdfs:range dbo:GovernmentAgency ;
+    rdfs:isDefinedBy dbo: .
+
+
+### Dublin Core Terms
+
+dcterms:creator
+    rdf:type owl:ObjectProperty ;
+    rdfs:range schema:Person ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:hasPart
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dcmitype:MovingImage ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:references
+    rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:type
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range madsrdf:GenreForm ;
+    rdfs:isDefinedBy dcterms: .
+
+
+### Schema.org
+
+schema:character
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range dbo:FictionalCharacter ;
+    rdfs:isDefinedBy schema: .
+
+schema:spokenByCharacter
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain bond:Catchphrase ;
+    rdfs:range dbo:FictionalCharacter ;
+    rdfs:isDefinedBy schema: .
+
+
+### Wikidata
+
+wdt:P4584
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain dbo:FictionalCharacter ;
+    rdfs:range dbo:Novel ;
+    rdfs:label "first appearance"@en ;
+    rdfs:isDefinedBy <https://www.wikidata.org/wiki/Property:P4584> .
+
+
+### RDA
+
+rdau:P60732
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range schema:MusicComposition ;
+    rdfs:isDefinedBy rdau: .
+
+rdau:P60723
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain dcmitype:MovingImage ;
+    rdfs:range schema:MusicComposition ;
+    rdfs:isDefinedBy rdau: .
+
+
+### Europeana Data Model
+
+edm:isRelatedTo
+    rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy edm: .
+
+
+#################################################################
+#    Local Object Properties
+#################################################################
+
+bond:featuresNarrativeRole
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range dul:Role ;
+    rdfs:label "features narrative role"@en ;
+    rdfs:comment "Relates a creative work to a narrative role or character type featured in it."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+bond:hasRelatedCharacter
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf edm:isRelatedTo ;
+    rdfs:domain dul:Role ;
+    rdfs:range dbo:FictionalCharacter ;
+    rdfs:label "has related character"@en ;
+    rdfs:comment "Relates a narrative role or character type to a fictional character to which it is characteristically related within a narrative domain."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+bond:hasVisualMarker
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf edm:isRelatedTo ;
+    rdfs:domain dbo:FictionalCharacter ;
+    rdfs:range dcmitype:Image ;
+    rdfs:label "has visual marker"@en ;
+    rdfs:comment "Relates a fictional character to a recurring visual element that functions as a recognizable marker of the character."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+bond:hasMusicalMarker
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf edm:isRelatedTo ;
+    rdfs:domain dbo:FictionalCharacter ;
+    rdfs:range schema:MusicComposition ;
+    rdfs:label "has musical marker"@en ;
+    rdfs:comment "Relates a fictional character to a musical composition that functions as a recognizable marker of the character."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+#################################################################
+#    Datatype Properties
+#################################################################
+
+### Dublin Core Terms
+
+dcterms:identifier
+    rdf:type owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:issued
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range xsd:gYear ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:date
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain dcmitype:Event ;
+    rdfs:range xsd:gYear ;
+    rdfs:isDefinedBy dcterms: .
+
+
+### Local datatype property
+
+bond:hasCodeNumber
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain dbo:FictionalCharacter ;
+    rdfs:range xsd:string ;
+    rdfs:label "has code number"@en ;
+    rdfs:comment "Relates a fictional character to the code number by which the character is identified within the fictional domain."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+### Schema.org
+
+schema:CreativeWork
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:Person
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:MusicComposition
+    rdf:type owl:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:isDefinedBy schema: .
+
+schema:ProductModel
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:Quotation
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:VideoGame
+    rdf:type owl:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:isDefinedBy schema: .
+
+
+### DBpedia
+
+dbo:FictionalCharacter
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy dbo: .
+
+dbo:Novel
+    rdf:type owl:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:isDefinedBy dbo: .
+
+dbo:GovernmentAgency
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy dbo: .
+
+dbo:Film
+    rdf:type owl:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:isDefinedBy dbo: .
+
+
+### DCMI Type Vocabulary
+
+dcmitype:Image
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy dcmitype: .
+
+dcmitype:MovingImage
+    rdf:type owl:Class ;
+    rdfs:subClassOf dcmitype:Image ;
+    rdfs:isDefinedBy dcmitype: .
+
+dcmitype:Event
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy dcmitype: .
+
+
+### DOLCE+DnS Ultralite
+
+dul:Role
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy dul: .
+
+
+### FoodOn
+
+foodon:FOODON_03315855
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy foodon: .
+
+
+### MADS/RDF
+
+madsrdf:SimpleType
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy madsrdf: .
+
+madsrdf:GenreForm
+    rdf:type owl:Class ;
+    rdfs:subClassOf madsrdf:SimpleType ;
+    rdfs:isDefinedBy madsrdf: .
+
+
+#################################################################
+#    Local Classes
+#################################################################
+
+bond:Catchphrase
+    rdf:type owl:Class ;
+    rdfs:subClassOf schema:Quotation ;
+    rdfs:label "Catchphrase"@en ;
+    rdfs:comment "A quotation that functions as a recurring and recognizable catchphrase within a narrative or cultural domain."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+bond:StockCharacter
+    rdf:type owl:Class ;
+    rdfs:subClassOf dul:Role ;
+    rdfs:label "Stock character"@en ;
+    rdfs:comment "A recurring and recognizable narrative character type understood as a role within a narrative domain."@en ;
+    rdfs:isDefinedBy bond: .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+xsd:string
+    rdf:type rdfs:Datatype .
+
+xsd:gYear
+    rdf:type rdfs:Datatype .
