@@ -304,25 +304,29 @@
       <!-- ============================= INTRODUCTION ============================ -->
       <div type="section" xml:id="intro">
         <head>James Bond</head>
-        <p>The <emph>James Bond</emph> franchise focuses on the character of <persName ref="#james_bond">James Bond</persName>, a fictional <orgName ref="#mi6">British Secret Service</orgName> agent created in 1953 by writer <persName ref="#ian_fleming">Ian Fleming</persName>, who featured him in twelve novels and two short-story collections. Since Fleming's death in 1964, nine other authors have written authorised Bond novels or novelisations: Kingsley Amis, Christopher Wood, John Gardner, Raymond Benson, Sebastian Faulks, Jeffery Deaver, William Boyd, Anthony Horowitz and Charlie Higson. The latest novel is <title>On His Majesty's Secret Service</title> by Charlie Higson, published in May 2023. Charlie Higson wrote a series on a young James Bond, and Kate Westbrook wrote three novels based on the diaries of a recurring series character, Moneypenny.</p>
+        <p>The <emph>James Bond</emph> franchise focuses on the character of <persName ref="#james_bond">James Bond</persName>, a fictional <orgName ref="#mi6">British Secret Service</orgName> agent created in 1953 by writer <persName ref="#ian_fleming">Ian Fleming</persName>, who featured him in twelve novels and two short-story collections. Since <persName ref="#ian_fleming"><surname>Fleming</surname></persName>'s death in 1964, nine other authors have written authorised Bond novels or novelisations: Kingsley Amis, Christopher Wood, John Gardner, Raymond Benson, Sebastian Faulks, Jeffery Deaver, William Boyd, Anthony Horowitz and Charlie Higson. The latest novel is <title>On His Majesty's Secret Service</title> by Charlie Higson, published in May 2023. Charlie Higson wrote a series on a young James Bond, and Kate Westbrook wrote three novels based on the diaries of a recurring series character, Moneypenny.</p>
         <p>The character—also known by the code number <num type="codeNumber" corresp="#james_bond">007</num> (pronounced "double-oh-seven")—has also been adapted for television, radio, comic strips, video games and film. The <emph>James Bond</emph> franchise is one of the highest-grossing media franchises of all time. The films constitute one of the longest continually running film series and have grossed over US$7.04 billion in total at the box office, making <emph>James Bond</emph> the fifth-highest-grossing film series to date. It started in 1962 with <title ref="#dr_no">Dr. No</title>, starring Sean Connery as <persName ref="#james_bond">Bond</persName>. As of 2021, there have been twenty-five films in the Eon Productions series.</p>
+        
+        <gap reason="sampling"/>
+
         <p>The Bond films are renowned for a number of features, including their soundtracks; three of the movies' theme songs have received Academy Awards and others have received nominations. Other important elements which run through most of the films include Bond's cars, his guns, and the gadgets with which he is supplied by Q Branch. The films are also noted for Bond's relationships with various women, who are popularly referred to as "<term ref="#bond_girl">Bond girls</term>".</p>
       </div>
       
       <!-- =================== PUBLICATION HISTORY / CREATION AND INSPIRATION =================== -->
       <div type="section" xml:id="publication_history">
         <head>Publication history</head>
+        
         <div type="subsection" xml:id="creation_inspiration">
           <head>Creation and inspiration</head>
-          <p>
-            <persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
-          <gap reason="sampling" />
-          <p>Fleming decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title ref="#casino_royale">Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q>
-          </p>
+          <p><persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
+          
+          <gap reason="sampling"/>
+          
+          <p><persName ref="#ian_fleming"><surname>Fleming</surname></persName> decided that Bond should resemble both American singer Hoagy Carmichael and himself and in <title ref="#casino_royale">Casino Royale</title>, Vesper Lynd remarks, <q>"Bond reminds me rather of Hoagy Carmichael, but there is something cold and ruthless."</q></p>
         </div>
       </div>
       
-      <gap reason="sampling" />
+      <gap reason="sampling"/>
       
       <!-- =================== MUSIC =================== -->
       <div type="section" xml:id="music">
@@ -343,6 +347,9 @@
       <!-- =================== VEHICLES =================== -->
       <div type="section" xml:id="vehicles">
         <head>Vehicles</head>
+        
+        <gap reason="sampling" />
+        
         <p>Bond's most famous car is the silver grey <objectName ref="#aston_martin_db5">Aston Martin DB5</objectName>, first seen in <title>Goldfinger</title>; it later featured in <title>Thunderball</title>, <title>GoldenEye</title>, <title>Tomorrow Never Dies</title>, <title>Casino Royale</title>, <title>Skyfall</title> and <title>Spectre</title>.</p>
       </div>
       
