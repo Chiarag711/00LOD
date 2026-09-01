@@ -318,7 +318,7 @@
         
         <div type="subsection" xml:id="creation_inspiration">
           <head>Creation and inspiration</head>
-          <p><persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. Fleming based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
+          <p><persName ref="#ian_fleming">Ian Fleming</persName> created the fictional character of <persName ref="#james_bond">James Bond</persName> as the central figure for his works. Bond is an intelligence officer in the Secret Intelligence Service, commonly known as <orgName ref="#mi6">MI6</orgName>. Bond is known by his code number, <num type="codeNumber" corresp="#james_bond">007</num>, and was a Royal Naval Reserve Commander. <persName ref="#ian_fleming"><surname>Fleming</surname></persName> based his fictional creation on a number of people he came across during his time in the Naval Intelligence Division and 30 Assault Unit during the Second World War, admitting that Bond <q>"was a compound of all the secret agents and commando types I met during the war"</q>.</p>
           
           <gap reason="sampling"/>
           
@@ -349,7 +349,7 @@
         <head>Vehicles</head>
         
         <gap reason="sampling" />
-        
+
         <p>Bond's most famous car is the silver grey <objectName ref="#aston_martin_db5">Aston Martin DB5</objectName>, first seen in <title>Goldfinger</title>; it later featured in <title>Thunderball</title>, <title>GoldenEye</title>, <title>Tomorrow Never Dies</title>, <title>Casino Royale</title>, <title>Skyfall</title> and <title>Spectre</title>.</p>
       </div>
       
