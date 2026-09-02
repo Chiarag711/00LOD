@@ -23,5 +23,5 @@ transform = ET.XSLT(xslt)
 newdom = transform(dom)
 
 # Write the result into an HTML file
-with open('./tei/007_tei.html', 'wb') as f:
+with open(OUTPUT_FILE, 'wb') as f:
     f.write(ET.tostring(newdom,pretty_print=True))
