@@ -20,11 +20,11 @@ bond_id:bond_james_bond a bond:Catchphrase ;
 
 bond_id:dr_no a dbo:Film ;
     rdfs:label "Dr. No"@en ;
-    dcterms:identifier "https://opac.sbn.it/opera/TO01587252" ;
     dcterms:issued "1962"^^xsd:gYear ;
     dcterms:type bond_id:spy_films ;
     rdau:P60732 bond_id:james_bond_theme ;
-    owl:sameAs <http://www.wikidata.org/entity/Q102754> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q102754>,
+        <https://opac.sbn.it/opera/TO01587252> ;
     bond:featuresNarrativeRole bond_id:bond_girl ;
     schema:character bond_id:james_bond .
 
@@ -48,10 +48,10 @@ bond_id:aston_martin_db5 a schema:ProductModel ;
 bond_id:casino_royale a dbo:Novel ;
     rdfs:label "Casino Royale"@en ;
     dcterms:creator bond_id:ian_fleming ;
-    dcterms:identifier "https://opac.sbn.it/opera/SBL0428596" ;
     dcterms:issued "1953"^^xsd:gYear ;
     dcterms:type bond_id:spy_fiction ;
-    owl:sameAs <http://www.wikidata.org/entity/Q1047711> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1047711>,
+        <https://opac.sbn.it/opera/SBL0428596> ;
     bond:featuresNarrativeRole bond_id:bond_girl .
 
 bond_id:first_person_shooter a madsrdf:GenreForm ;
@@ -82,8 +82,8 @@ bond_id:bond_girl a bond:StockCharacter ;
 
 bond_id:ian_fleming a schema:Person ;
     rdfs:label "Ian Fleming"@en ;
-    dcterms:identifier "http://id.sbn.it/bid/CFIV017252" ;
-    owl:sameAs <http://viaf.org/viaf/51689472> .
+    owl:sameAs <http://id.sbn.it/bid/CFIV017252>,
+        <http://viaf.org/viaf/51689472> .
 
 bond_id:james_bond_theme a schema:MusicComposition ;
     rdfs:label "James Bond Theme"@en ;

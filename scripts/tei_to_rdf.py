@@ -1,9 +1,16 @@
+from pathlib import Path
+
 import lxml.etree as ET
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD, SKOS
 
+# Use project-relative paths so the script can run from any directory
+BASE_DIR = Path(__file__).resolve().parent.parent
+TEI_FILE = BASE_DIR / "tei" / "007_tei.xml"
+OUTPUT_FILE = BASE_DIR / "rdf" / "007_tei.ttl"
+
 # Parse the TEI/XML file
-tree = ET.parse('./tei/007_tei.xml')
+tree = ET.parse(TEI_FILE)
 
 # Define the TEI and XML namespaces used for XPath queries and xml:id attributes
 NS = {"tei": "http://www.tei-c.org/ns/1.0"}
@@ -230,10 +237,10 @@ for event in tree.xpath("//tei:listEvent/tei:event", namespaces=NS):
 for element in tree.xpath("//*[@xml:id][tei:idno[@type='SBN']]", namespaces=NS):
     xml_id = element.get(f"{{{XML_NS}}}id")
 
-    sbn = element.xpath("string(tei:idno[@type='SBN'][1])",namespaces=NS).strip()
+    sbn = element.xpath("string(tei:idno[@type='SBN'][1])", namespaces=NS).strip()
 
     if xml_id and sbn:
-        g.add((LOCAL[xml_id],OWL.sameAs,URIRef(sbn)))
+        g.add((LOCAL[xml_id], OWL.sameAs, URIRef(sbn)))
 
 # Reconcile genre terms with external authority resources
 for term in tree.xpath("//tei:textClass/tei:keywords/tei:term[@xml:id and @ref]",namespaces=NS):
@@ -246,14 +253,12 @@ for term in tree.xpath("//tei:textClass/tei:keywords/tei:term[@xml:id and @ref]"
 # =========== OUTPUT AND VALIDATION ===========
 
 # Serialize the RDF graph to Turtle
-output_file = "./rdf/007_tei.ttl"
-
-g.serialize(destination=output_file,format="turtle")
+g.serialize(destination=OUTPUT_FILE, format="turtle")
 
 # Verify the generated Turtle by parsing it again
 check_graph = Graph()
-check_graph.parse(output_file, format="turtle")
+check_graph.parse(OUTPUT_FILE, format="turtle")
 
 print(f"Triples generated: {len(g)}")
-print(f"Triples validated: {len(check_graph)}")
-print(f"RDF dataset saved to: {output_file}")
+print(f"Triples parsed back: {len(check_graph)}")
+print(f"RDF dataset saved to: {OUTPUT_FILE}")
