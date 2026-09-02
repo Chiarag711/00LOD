@@ -9,6 +9,7 @@
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -59,7 +60,8 @@ bond_id:first_person_shooter a madsrdf:GenreForm ;
 
 bond_id:mi6 a dbo:GovernmentAgency ;
     rdfs:label "Secret Intelligence Service"@en ;
-    owl:sameAs <http://www.wikidata.org/entity/Q184560> .
+    owl:sameAs <http://www.wikidata.org/entity/Q184560> ;
+    skos:altLabel "MI6"@en .
 
 bond_id:motion_picture_music a madsrdf:GenreForm ;
     rdfs:label "Motion picture music"@en ;
@@ -79,8 +81,7 @@ bond_id:bond_girl a bond:StockCharacter ;
     bond:hasRelatedCharacter bond_id:james_bond .
 
 bond_id:ian_fleming a schema:Person ;
-    rdfs:label """Ian
-              Fleming"""@en ;
+    rdfs:label "Ian Fleming"@en ;
     dcterms:identifier "http://id.sbn.it/bid/CFIV017252" ;
     owl:sameAs <http://viaf.org/viaf/51689472> .
 
@@ -91,8 +92,7 @@ bond_id:james_bond_theme a schema:MusicComposition ;
     owl:sameAs <http://www.wikidata.org/entity/Q746181> .
 
 bond_id:james_bond a dbo:FictionalCharacter ;
-    rdfs:label """James
-              Bond"""@en ;
+    rdfs:label "James Bond"@en ;
     dbo:affiliation bond_id:mi6 ;
     dcterms:creator bond_id:ian_fleming ;
     edm:isRelatedTo bond_id:aston_martin_db5 ;
