@@ -1,0 +1,124 @@
+@prefix bond: <https://chiarag711.github.io/00LOD/ontology/BondOntology#> .
+@prefix bond_id: <https://chiarag711.github.io/00LOD/#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix foodon: <http://purl.obolibrary.org/obo/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bond_id:bond_james_bond a bond:Catchphrase ;
+    rdfs:label "Bond, James Bond"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q141193252> ;
+    schema:spokenByCharacter bond_id:james_bond .
+
+bond_id:dr_no a dbo:Film ;
+    rdfs:label "Dr. No"@en ;
+    dcterms:hasPart bond_id:gun_barrel_sequence ;
+    dcterms:issued "1962"^^xsd:gYear ;
+    dcterms:type bond_id:spy_films ;
+    rdau:P60732 bond_id:james_bond_theme ;
+    owl:sameAs <http://id.loc.gov/authorities/names/no2003120703>,
+        <http://www.wikidata.org/entity/Q102754>,
+        <https://opac.sbn.it/opera/TO01587252> ;
+    bond:featuresNarrativeRole bond_id:bond_girl ;
+    schema:character bond_id:james_bond .
+
+bond_id:goldeneye_007 a schema:VideoGame ;
+    rdfs:label "GoldenEye 007"@en ;
+    dcterms:issued "1997"^^xsd:gYear ;
+    dcterms:type bond_id:first_person_shooter ;
+    owl:sameAs <http://www.wikidata.org/entity/Q369086> ;
+    schema:character bond_id:james_bond .
+
+bond_id:olympics_2012_opening a dcmitype:Event ;
+    rdfs:label "2012 Summer Olympics opening ceremony"@en ;
+    dcterms:date "2012"^^xsd:gYear ;
+    dcterms:references bond_id:james_bond ;
+    owl:sameAs <http://www.wikidata.org/entity/Q168545> .
+
+bond_id:shaken_not_stirred a bond:Catchphrase ;
+    rdfs:label "Shaken, not stirred"@en ;
+    dcterms:references bond_id:vodka_martini ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7462784> ;
+    schema:spokenByCharacter bond_id:james_bond .
+
+bond_id:aston_martin_db5 a schema:ProductModel ;
+    rdfs:label "Aston Martin DB5"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q749871> .
+
+bond_id:casino_royale a dbo:Novel ;
+    rdfs:label "Casino Royale"@en ;
+    dcterms:creator bond_id:ian_fleming ;
+    dcterms:issued "1953"^^xsd:gYear ;
+    dcterms:type bond_id:spy_fiction ;
+    owl:sameAs <http://id.loc.gov/authorities/names/no2009106072>,
+        <http://www.wikidata.org/entity/Q1047711>,
+        <https://opac.sbn.it/opera/SBL0428596> ;
+    bond:featuresNarrativeRole bond_id:bond_girl .
+
+bond_id:first_person_shooter a madsrdf:GenreForm ;
+    rdfs:label "First-person shooter"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q185029> .
+
+bond_id:mi6 a dbo:GovernmentAgency ;
+    rdfs:label "Secret Intelligence Service"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q184560> ;
+    skos:altLabel "MI6"@en .
+
+bond_id:motion_picture_music a madsrdf:GenreForm ;
+    rdfs:label "Motion picture music"@en ;
+    owl:sameAs <http://id.loc.gov/authorities/genreForms/gf2014026950> .
+
+bond_id:spy_fiction a madsrdf:GenreForm ;
+    rdfs:label "Spy fiction"@en ;
+    owl:sameAs <http://id.loc.gov/authorities/genreForms/gf2014026555> .
+
+bond_id:spy_films a madsrdf:GenreForm ;
+    rdfs:label "Spy films"@en ;
+    owl:sameAs <http://id.loc.gov/authorities/genreForms/gf2011026604> .
+
+bond_id:bond_girl a bond:StockCharacter ;
+    rdfs:label "Bond girl"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1649366> ;
+    bond:hasRelatedCharacter bond_id:james_bond .
+
+bond_id:gun_barrel_sequence a dcmitype:MovingImage ;
+    rdfs:label "Gun barrel sequence"@en ;
+    rdau:P60723 bond_id:james_bond_theme ;
+    owl:sameAs <http://www.wikidata.org/entity/Q26011136> .
+
+bond_id:ian_fleming a schema:Person ;
+    rdfs:label "Ian Fleming"@en ;
+    owl:sameAs <http://id.sbn.it/bid/CFIV017252>,
+        <http://viaf.org/viaf/51689472> .
+
+bond_id:vodka_martini a foodon:FOODON_03315855 ;
+    rdfs:label "Vodka martini"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2553569> .
+
+bond_id:james_bond_theme a schema:MusicComposition ;
+    rdfs:label "James Bond Theme"@en ;
+    dcterms:issued "1962"^^xsd:gYear ;
+    dcterms:type bond_id:motion_picture_music ;
+    owl:sameAs <http://www.wikidata.org/entity/Q746181> .
+
+bond_id:james_bond a dbo:FictionalCharacter ;
+    rdfs:label "James Bond"@en ;
+    dbo:affiliation bond_id:mi6 ;
+    dcterms:creator bond_id:ian_fleming ;
+    edm:isRelatedTo bond_id:aston_martin_db5,
+        bond_id:vodka_martini ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2009573> ;
+    wdt:P4584 bond_id:casino_royale ;
+    bond:hasCodeNumber "007"^^xsd:string ;
+    bond:hasMusicalMarker bond_id:james_bond_theme ;
+    bond:hasVisualMarker bond_id:gun_barrel_sequence .
+

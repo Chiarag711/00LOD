@@ -1,5 +1,4 @@
 from pathlib import Path
-
 import lxml.etree as ET
 
 # Use project-relative paths so the script can run from any directory

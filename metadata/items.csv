@@ -1,0 +1,108 @@
+subject,predicate,object,object_type,datatype,language
+james_bond,rdf:type,dbo:FictionalCharacter,uri,,
+james_bond,rdfs:label,James Bond,literal,,en
+james_bond,dcterms:creator,ian_fleming,local,,
+james_bond,dbo:affiliation,mi6,local,,
+james_bond,wdt:P4584,casino_royale,local,,
+james_bond,edm:isRelatedTo,aston_martin_db5,local,,
+james_bond,edm:isRelatedTo,vodka_martini,local,,
+james_bond,bond:hasVisualMarker,gun_barrel_sequence,local,,
+james_bond,bond:hasMusicalMarker,james_bond_theme,local,,
+james_bond,bond:hasCodeNumber,007,literal,xsd:string,
+james_bond,owl:sameAs,http://www.wikidata.org/entity/Q2009573,uri,,
+
+ian_fleming,rdf:type,schema:Person,uri,,
+ian_fleming,rdfs:label,Ian Fleming,literal,,en
+ian_fleming,owl:sameAs,http://viaf.org/viaf/51689472,uri,,
+ian_fleming,owl:sameAs,http://id.sbn.it/bid/CFIV017252,uri,,
+
+casino_royale,rdf:type,dbo:Novel,uri,,
+casino_royale,rdfs:label,Casino Royale,literal,,en
+casino_royale,dcterms:creator,ian_fleming,local,,
+casino_royale,bond:featuresNarrativeRole,bond_girl,local,,
+casino_royale,dcterms:issued,1953,literal,xsd:gYear,
+casino_royale,dcterms:type,spy_fiction,local,,
+casino_royale,owl:sameAs,http://www.wikidata.org/entity/Q1047711,uri,,
+casino_royale,owl:sameAs,https://opac.sbn.it/opera/SBL0428596,uri,,
+casino_royale,owl:sameAs,http://id.loc.gov/authorities/names/no2009106072,uri,,
+
+mi6,rdf:type,dbo:GovernmentAgency,uri,,
+mi6,rdfs:label,Secret Intelligence Service,literal,,en
+mi6,skos:altLabel,MI6,literal,,en
+mi6,owl:sameAs,http://www.wikidata.org/entity/Q184560,uri,,
+
+dr_no,rdf:type,dbo:Film,uri,,
+dr_no,rdfs:label,Dr. No,literal,,en
+dr_no,schema:character,james_bond,local,,
+dr_no,dcterms:hasPart,gun_barrel_sequence,local,,
+dr_no,rdau:P60732,james_bond_theme,local,,
+dr_no,bond:featuresNarrativeRole,bond_girl,local,,
+dr_no,dcterms:issued,1962,literal,xsd:gYear,
+dr_no,dcterms:type,spy_films,local,,
+dr_no,owl:sameAs,http://www.wikidata.org/entity/Q102754,uri,,
+dr_no,owl:sameAs,https://opac.sbn.it/opera/TO01587252,uri,,
+dr_no,owl:sameAs,http://id.loc.gov/authorities/names/no2003120703,uri,,
+
+james_bond_theme,rdf:type,schema:MusicComposition,uri,,
+james_bond_theme,rdfs:label,James Bond Theme,literal,,en
+james_bond_theme,dcterms:issued,1962,literal,xsd:gYear,
+james_bond_theme,dcterms:type,motion_picture_music,local,,
+james_bond_theme,owl:sameAs,http://www.wikidata.org/entity/Q746181,uri,,
+
+gun_barrel_sequence,rdf:type,dcmitype:MovingImage,uri,,
+gun_barrel_sequence,rdfs:label,Gun barrel sequence,literal,,en
+gun_barrel_sequence,rdau:P60723,james_bond_theme,local,,
+gun_barrel_sequence,owl:sameAs,http://www.wikidata.org/entity/Q26011136,uri,,
+
+aston_martin_db5,rdf:type,schema:ProductModel,uri,,
+aston_martin_db5,rdfs:label,Aston Martin DB5,literal,,en
+aston_martin_db5,owl:sameAs,http://www.wikidata.org/entity/Q749871,uri,,
+
+vodka_martini,rdf:type,foodon:FOODON_03315855,uri,,
+vodka_martini,rdfs:label,Vodka martini,literal,,en
+vodka_martini,owl:sameAs,http://www.wikidata.org/entity/Q2553569,uri,,
+
+bond_girl,rdf:type,bond:StockCharacter,uri,,
+bond_girl,rdfs:label,Bond girl,literal,,en
+bond_girl,bond:hasRelatedCharacter,james_bond,local,,
+bond_girl,owl:sameAs,http://www.wikidata.org/entity/Q1649366,uri,,
+
+shaken_not_stirred,rdf:type,bond:Catchphrase,uri,,
+shaken_not_stirred,rdfs:label,"Shaken, not stirred",literal,,en
+shaken_not_stirred,schema:spokenByCharacter,james_bond,local,,
+shaken_not_stirred,dcterms:references,vodka_martini,local,,
+shaken_not_stirred,owl:sameAs,http://www.wikidata.org/entity/Q7462784,uri,,
+
+bond_james_bond,rdf:type,bond:Catchphrase,uri,,
+bond_james_bond,rdfs:label,"Bond, James Bond",literal,,en
+bond_james_bond,schema:spokenByCharacter,james_bond,local,,
+bond_james_bond,owl:sameAs,http://www.wikidata.org/entity/Q141193252,uri,,
+
+goldeneye_007,rdf:type,schema:VideoGame,uri,,
+goldeneye_007,rdfs:label,GoldenEye 007,literal,,en
+goldeneye_007,schema:character,james_bond,local,,
+goldeneye_007,dcterms:issued,1997,literal,xsd:gYear,
+goldeneye_007,dcterms:type,first_person_shooter,local,,
+goldeneye_007,owl:sameAs,http://www.wikidata.org/entity/Q369086,uri,,
+
+olympics_2012_opening,rdf:type,dcmitype:Event,uri,,
+olympics_2012_opening,rdfs:label,2012 Summer Olympics opening ceremony,literal,,en
+olympics_2012_opening,dcterms:references,james_bond,local,,
+olympics_2012_opening,dcterms:date,2012,literal,xsd:gYear,
+olympics_2012_opening,owl:sameAs,http://www.wikidata.org/entity/Q168545,uri,,
+
+spy_fiction,rdf:type,madsrdf:GenreForm,uri,,
+spy_fiction,rdfs:label,Spy fiction,literal,,en
+spy_fiction,owl:sameAs,http://id.loc.gov/authorities/genreForms/gf2014026555,uri,,
+
+spy_films,rdf:type,madsrdf:GenreForm,uri,,
+spy_films,rdfs:label,Spy films,literal,,en
+spy_films,owl:sameAs,http://id.loc.gov/authorities/genreForms/gf2011026604,uri,,
+
+motion_picture_music,rdf:type,madsrdf:GenreForm,uri,,
+motion_picture_music,rdfs:label,Motion picture music,literal,,en
+motion_picture_music,owl:sameAs,http://id.loc.gov/authorities/genreForms/gf2014026950,uri,,
+
+first_person_shooter,rdf:type,madsrdf:GenreForm,uri,,
+first_person_shooter,rdfs:label,First-person shooter,literal,,en
+first_person_shooter,owl:sameAs,http://www.wikidata.org/entity/Q185029,uri,,
