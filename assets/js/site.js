@@ -54,20 +54,12 @@ if (dossiers.length) {
 
         panel.insertAdjacentHTML("beforeend", `
             <nav class="dossier-navigation" aria-label="Mission File navigation">
-                <a
-                    class="dossier-nav-link dossier-nav-prev"
-                    href="#${previous.id}"
-                    aria-label="Previous Mission File: ${prevInfo.title}"
-                >
+                <a class="dossier-nav-link dossier-nav-prev" href="#${previous.id}" aria-label="Previous Mission File: ${prevInfo.title}">
                     <span class="dossier-nav-number">← ${prevInfo.number}</span>
                     <span class="dossier-nav-title">${prevInfo.title}</span>
                 </a>
 
-                <a
-                    class="dossier-nav-link dossier-nav-next"
-                    href="#${next.id}"
-                    aria-label="Next Mission File: ${nextInfo.title}"
-                >
+                <a class="dossier-nav-link dossier-nav-next" href="#${next.id}" aria-label="Next Mission File: ${nextInfo.title}">
                     <span class="dossier-nav-number">${nextInfo.number} →</span>
                     <span class="dossier-nav-title">${nextInfo.title}</span>
                 </a>
@@ -76,10 +68,7 @@ if (dossiers.length) {
     });
 
     const syncDossierState = () => {
-        document.body.classList.toggle(
-            "dossier-open",
-            Boolean(activeDossier())
-        );
+        document.body.classList.toggle("dossier-open", Boolean(activeDossier()));
     };
 
     const switchDossier = (target, direction = 1) => {
@@ -94,11 +83,7 @@ if (dossiers.length) {
 
         transitionRunning = true;
 
-        current.classList.add(
-            direction < 0
-                ? "is-switching-prev"
-                : "is-switching-next"
-        );
+        current.classList.add(direction < 0 ? "is-switching-prev" : "is-switching-next");
 
         window.setTimeout(() => {
             window.location.hash = target.id;
@@ -118,11 +103,7 @@ if (dossiers.length) {
         if (!current) return;
 
         const index = dossiers.indexOf(current);
-        const target =
-            dossiers[
-                (index + direction + dossiers.length) %
-                dossiers.length
-            ];
+        const target = dossiers[(index + direction + dossiers.length) % dossiers.length];
 
         switchDossier(target, direction);
     };
@@ -168,12 +149,7 @@ if (dossiers.length) {
         const activeElement = document.activeElement;
         const tag = activeElement?.tagName;
 
-        if (
-            ["INPUT", "TEXTAREA", "SELECT"].includes(tag) ||
-            activeElement?.isContentEditable
-        ) {
-            return;
-        }
+        if (["INPUT", "TEXTAREA", "SELECT"].includes(tag) || activeElement?.isContentEditable) return;
 
         if (event.key === "Escape") {
             window.location.hash = "mission-files";

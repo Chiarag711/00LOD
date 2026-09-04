@@ -1245,29 +1245,6 @@ body.dossier-open {
     transform: translateX(4px);
 }
 
-.back-to-top {
-    width: fit-content;
-
-    display: block;
-
-    margin: 2rem 0 0 auto;
-
-    color: var(--muted);
-
-    font-family: "IBM Plex Mono", Consolas, monospace;
-    font-size: 0.65rem;
-    font-weight: 600;
-
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.back-to-top:hover {
-    color: var(--gold-light);
-}
-
-
 /* ---------------------------------
    Code / RDF / TEI
 ---------------------------------- */
@@ -1399,6 +1376,12 @@ tr:hover td {
 .site-footer {
     width: min(calc(100% - 4rem), var(--max-width));
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.65rem;
+
     margin: 2rem auto 0;
     padding: 2.5rem 0;
 
@@ -1407,36 +1390,27 @@ tr:hover td {
     color: var(--muted);
 
     font-size: 0.76rem;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 0.65rem;
-
     text-align: center;
 }
 
-.footer-content p {
+.site-footer p {
     margin: 0;
 }
 
-.footer-content > p:first-child {
+.site-footer > p:first-child {
     color: var(--text);
 
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
-.footer-author a {
+.site-footer a {
     color: var(--gold-light);
 
     text-decoration: none;
 }
 
-.footer-author a:hover {
+.site-footer a:hover {
     color: var(--white);
 }
 
