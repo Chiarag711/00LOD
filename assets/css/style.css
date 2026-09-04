@@ -1399,7 +1399,7 @@ tr:hover td {
 .site-footer {
     width: min(calc(100% - 4rem), var(--max-width));
 
-    margin: 5rem auto 0;
+    margin: 2rem auto 0;
     padding: 2.5rem 0;
 
     border-top: 1px solid var(--border);
@@ -1411,10 +1411,12 @@ tr:hover td {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 
-    gap: 2rem;
+    gap: 0.65rem;
+
+    text-align: center;
 }
 
 .footer-content p {
@@ -1422,12 +1424,10 @@ tr:hover td {
 }
 
 .footer-content > p:first-child {
+    color: var(--text);
+
     letter-spacing: 0.06em;
     text-transform: uppercase;
-}
-
-.footer-author {
-    flex-shrink: 0;
 }
 
 .footer-author a {
@@ -1438,6 +1438,28 @@ tr:hover td {
 
 .footer-author a:hover {
     color: var(--white);
+}
+
+.back-to-top {
+    width: fit-content;
+
+    display: block;
+
+    margin: 1.75rem auto 0;
+
+    color: var(--muted);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.back-to-top:hover {
+    color: var(--gold-light);
 }
 
 
@@ -1588,13 +1610,6 @@ tr:hover td {
         align-items: flex-start;
 
         text-align: left;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 0.7rem;
     }
 
     .idea-map {
