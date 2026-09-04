@@ -135,10 +135,10 @@
           
           <!-- ============== RDF TYPES OF GENRE ==============-->
           
-          <relation active="#spy_fiction" name="rdf:type" passive="madsrdf:GenreForm"/>
-          <relation active="#spy_films" name="rdf:type" passive="madsrdf:GenreForm"/>
-          <relation active="#motion_picture_music" name="rdf:type" passive="madsrdf:GenreForm"/>
-          <relation active="#first_person_shooter" name="rdf:type" passive="madsrdf:GenreForm"/>
+          <relation active="#spy_fiction" name="rdf:type" passive="skos:Concept"/>
+          <relation active="#spy_films" name="rdf:type" passive="skos:Concept"/>
+          <relation active="#motion_picture_music" name="rdf:type" passive="skos:Concept"/>
+          <relation active="#first_person_shooter" name="rdf:type" passive="skos:Concept"/>
           
           <!-- ============== ORIGINS ============== -->
           
@@ -292,8 +292,8 @@
           <p>Europeana Data Model</p>
         </prefixDef>
         
-        <prefixDef ident="madsrdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.loc.gov/mads/rdf/v1#$1">
-          <p>MADS/RDF Vocabulary</p>
+        <prefixDef ident="skos" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2004/02/skos/core#$1">
+          <p>SKOS Vocabulary</p>
         </prefixDef>
       </listPrefixDef>
     </encodingDesc>

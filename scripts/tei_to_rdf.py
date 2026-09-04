@@ -35,24 +35,6 @@ DCMITYPE = Namespace("http://purl.org/dc/dcmitype/")
 WDT = Namespace("http://www.wikidata.org/prop/direct/")
 RDAU = Namespace("http://rdaregistry.info/Elements/u/")
 EDM = Namespace("http://www.europeana.eu/schemas/edm/")
-MADSRDF = Namespace("http://www.loc.gov/mads/rdf/v1#")
-
-# Bind namespace prefixes for Turtle serialization
-g.bind("bond_id", LOCAL)
-g.bind("bond", BOND)
-g.bind("dbo", DBO)
-g.bind("schema", SCHEMA)
-g.bind("dcterms", DCTERMS)
-g.bind("dcmitype", DCMITYPE)
-g.bind("wdt", WDT)
-g.bind("rdau", RDAU)
-g.bind("edm", EDM)
-g.bind("madsrdf", MADSRDF)
-g.bind("rdf", RDF)
-g.bind("rdfs", RDFS)
-g.bind("owl", OWL)
-g.bind("xsd", XSD)
-g.bind("skos", SKOS)
 
 # Map TEI prefixed names to RDF namespaces
 PREFIXES = {
@@ -64,11 +46,17 @@ PREFIXES = {
     "wdt": WDT,
     "rdau": RDAU,
     "edm": EDM,
-    "madsrdf": MADSRDF,
     "rdf": RDF,
     "owl": OWL,
     "xsd": XSD,
+    "skos": SKOS,
 }
+
+# Bind namespace prefixes for Turtle serialization
+g.bind("bond_id", LOCAL)
+
+for prefix, namespace in PREFIXES.items():
+    g.bind(prefix, namespace)
 
 # Resolve local references, full URIs, and prefixed names to RDF URIRefs
 def resolve_uri(value):
