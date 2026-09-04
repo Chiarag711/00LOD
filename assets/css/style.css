@@ -1337,6 +1337,60 @@ tr:hover td {
     background: rgba(241, 239, 233, 0.025);
 }
 
+/* ---------------------------------
+   Academic context
+---------------------------------- */
+
+.academic-context {
+    width: min(calc(100% - 4rem), var(--max-width));
+    margin: 1rem auto 0;
+    padding: 2rem 0;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.academic-context-label {
+    margin-bottom: 0.7rem;
+
+    color: var(--gold);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.academic-context > p:not(.academic-context-label) {
+    max-width: 900px;
+    margin-bottom: 0.6rem;
+}
+
+.academic-context strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.academic-context a {
+    color: var(--gold-light);
+
+    text-decoration: none;
+    text-underline-offset: 0.18em;
+}
+
+.academic-context a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.academic-context-note {
+    font-size: 0.72rem;
+}
+
 
 /* ---------------------------------
    Footer
@@ -1500,6 +1554,10 @@ tr:hover td {
         grid-template-columns: 1fr;
 
         gap: 0.25rem;
+    }
+
+    .academic-context {
+        width: min(calc(100% - 2rem), var(--max-width));
     }
 }
 
