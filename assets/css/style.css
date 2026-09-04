@@ -349,6 +349,10 @@ main {
     z-index: 1;
 }
 
+.hero-title span {
+    display: block;
+}
+
 .research-question {
     max-width: 900px;
 
