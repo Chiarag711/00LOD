@@ -9,13 +9,13 @@
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix foodon: <http://purl.obolibrary.org/obo/> .
-@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 @base <https://chiarag711.github.io/00LOD/ontology/BondOntology#> .
 
@@ -63,7 +63,7 @@ dcterms:references
 dcterms:type
     rdf:type owl:ObjectProperty ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range madsrdf:GenreForm ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy dcterms: .
 
 
@@ -277,16 +277,11 @@ foodon:FOODON_03315855
     rdfs:isDefinedBy foodon: .
 
 
-### MADS/RDF
+### SKOS
 
-madsrdf:SimpleType
+skos:Concept
     rdf:type owl:Class ;
-    rdfs:isDefinedBy madsrdf: .
-
-madsrdf:GenreForm
-    rdf:type owl:Class ;
-    rdfs:subClassOf madsrdf:SimpleType ;
-    rdfs:isDefinedBy madsrdf: .
+    rdfs:isDefinedBy skos: .
 
 
 #################################################################

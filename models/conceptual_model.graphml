@@ -82,12 +82,12 @@ dul:	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#
 edm:	http://www.europeana.eu/schemas/edm/
 rdau:	http://rdaregistry.info/Elements/u/
 foodon:	http://purl.obolibrary.org/obo/
-madsrdf: 	http://www.loc.gov/mads/rdf/v1#
 wdt:	http://www.wikidata.org/prop/direct/
 rdf:	http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdfs:	http://www.w3.org/2000/01/rdf-schema#
 owl:	http://www.w3.org/2002/07/owl#
-xsd:	http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
+xsd:	http://www.w3.org/2001/XMLSchema#
+skos: 	http://www.w3.org/2004/02/skos/core#</y:NodeLabel>
               <y:Shape type="rectangle"/>
             </y:ShapeNode>
           </data>
@@ -108,10 +108,10 @@ xsd:	http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
     <node id="n4">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="167.373681911412" x="1686.313159044294" y="1688.0"/>
+          <y:Geometry height="44.0" width="120.70609108391051" x="1709.6469544580448" y="1688.0"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="159.3203125" x="4.026684705705975" xml:space="preserve" y="10.578125">madsrdf:GenreForm</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.546875" x="6.079608041955225" xml:space="preserve" y="10.578125">skos:Concept</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -276,7 +276,7 @@ xsd:	http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
           <y:Geometry height="44.0" width="167.37368191141212" x="546.3131590442939" y="1538.0"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="156.1796875" x="5.596997205706032" xml:space="preserve" y="10.578125">schema:VideoGame</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="156.1796875" x="5.596997205706089" xml:space="preserve" y="10.578125">schema:VideoGame</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -320,7 +320,7 @@ xsd:	http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
           <y:Geometry height="44.0" width="139.00672540543798" x="230.49663729728104" y="1538.0"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="122.0" x="8.50336270271896" xml:space="preserve" y="10.578125">dcmitype:Event</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="122.0" x="8.503362702718988" xml:space="preserve" y="10.578125">dcmitype:Event</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -823,7 +823,7 @@ xsd:	http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
           </y:Path>
           <y:LineStyle color="#000080" type="line" width="1.0"/>
           <y:Arrows source="circle" target="delta"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="95.8828125" x="-701.642578125" xml:space="preserve" y="-1361.421875">owl:sameAs<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="95.8828125" x="-678.322265625" xml:space="preserve" y="-1361.421875">owl:sameAs<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
