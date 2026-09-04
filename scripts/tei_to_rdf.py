@@ -47,6 +47,7 @@ PREFIXES = {
     "rdau": RDAU,
     "edm": EDM,
     "rdf": RDF,
+    "rdfs": RDFS,
     "owl": OWL,
     "xsd": XSD,
     "skos": SKOS,
