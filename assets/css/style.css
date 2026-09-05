@@ -1530,6 +1530,11 @@ body.dossier-open {
     transform: translateX(4px);
 }
 
+.page-links {
+    margin-top: 0;
+    margin-bottom: 6.5rem;
+}
+
 /* ---------------------------------
    Code / RDF / TEI
 ---------------------------------- */
@@ -1859,6 +1864,10 @@ tr:hover td {
 
     .academic-context {
         width: min(calc(100% - 2rem), var(--max-width));
+    }
+
+    .page-links {
+        margin-bottom: 4.5rem;
     }
 }
 

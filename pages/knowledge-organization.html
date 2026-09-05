@@ -53,25 +53,25 @@
             <h2>Theoretical Model</h2>
 
             <p>
-                The theoretical model was developed from the fourteen selected entities and the relationships identified
-                during the initial idea conceptualisation. Each connection was expressed through natural-language
-                statements, before introducing specific ontology terms or RDF properties.
+                The theoretical model translates the initial idea conceptualisation into a network of
+                natural-language statements. Starting from the fourteen selected entities, it makes explicit
+                how each item relates to James Bond and how the items relate to one another, without yet
+                introducing ontology terms or RDF properties.
             </p>
 
             <p>
-                The model highlights both the relation of each entity to James Bond and the connections among the selected
-                items themselves. In this way, Bond's literary origins, institutional identity, audiovisual conventions,
-                material associations, verbal markers and later cultural appearances can be read as parts of the same
-                network of cultural identity.
+                The resulting network organises the selected material around the dimensions through which
+                Bond's cultural identity is investigated: literary origins, institutional identity,
+                audiovisual conventions, material associations, character system, verbal markers and
+                cultural afterlife.
             </p>
 
             <p>
                 The labels <em>Origins</em>, <em>Character system</em>, <em>Material identity</em>,
                 <em>Institutional identity</em>, <em>Verbal identity</em>, <em>Audiovisual identity</em>
-                and <em>Cultural afterlife</em> are analytical groupings introduced to organise the model
-                and make the different dimensions of Bond's cultural identity easier to read. They are
-                not intended as semantic classes or formal categories and are therefore not translated
-                into the conceptual model or encoded in the ontology and RDF datasets.
+                and <em>Cultural afterlife</em> are analytical groupings introduced to make these dimensions
+                easier to read. They are not semantic classes or formal categories and are therefore not
+                translated into the conceptual model or encoded in the ontology and RDF datasets.
             </p>
 
             <div class="visualisation visualisation-model model-viewer" data-model-viewer>
@@ -97,18 +97,19 @@
             <p class="eyebrow">02 / Semantic Formalisation</p>
             <h2>Conceptual Model</h2>
 
-            <p>
-                Starting from the entities and predicates expressed in natural language in the theoretical model, the
-                conceptual model formalises them through RDF classes, properties and reusable URIs. Existing ontologies
-                and controlled vocabularies were preferred whenever their semantics matched the intended entity or
-                relation, while project-specific terms were introduced only where a suitable reusable term was not
-                available.
+           <p>
+                Building on the theoretical model, the conceptual model translates natural-language
+                entities and relations into RDF classes, properties and URIs. Existing ontologies and
+                vocabularies were reused whenever their semantics matched the intended meaning, while
+                project-specific terms were introduced only where no existing resource provided a
+                sufficiently precise representation.
             </p>
 
             <p>
-                The selection of reusable terms was based on their semantic definition and modelling role rather than on
-                lexical similarity alone. External authority identifiers were retained to connect the selected entities
-                with existing knowledge bases, while SKOS concepts were used for the project's classification layer.
+                The modelling choices were based on the definitions and intended scope of the reused
+                terms rather than on lexical similarity alone. External identifiers connect the selected
+                entities to authority records and Linked Open Data resources, while genres and other
+                classifications are represented through SKOS concepts.
             </p>
 
             <div class="visualisation visualisation-model model-viewer" data-model-viewer>
@@ -133,10 +134,9 @@
 
             <p>
                 The conceptual model combines terms from existing ontologies and vocabularies according
-                to the semantic role required by each entity or relation. Reuse was preferred whenever
-                an existing term adequately expressed the intended meaning; project-specific terms were
-                introduced only where the available resources did not provide a sufficiently appropriate
-                solution.
+                to the semantic role required by each entity or relation. Reuse was preferred wherever
+                an existing term adequately expressed the intended semantics; the local
+                <code>bond:</code> vocabulary was kept deliberately limited.
             </p>
 
             <table>
@@ -324,21 +324,20 @@
             <h3>Core Semantic Web standards</h3>
 
             <p>
-                RDF, RDFS, OWL and XML Schema datatypes provide the formal infrastructure of the model.
-                RDF is used for typing statements, RDFS for resources, literals, subclass relations and
-                schema-level definitions, OWL for the ontology itself and its classes and properties,
-                and XSD for datatype values such as <code>xsd:string</code> and <code>xsd:gYear</code>.
+                RDF, RDFS, OWL and XML Schema provide the formal infrastructure of the model.
+                RDF and RDFS support the representation of statements, class and property hierarchies,
+                domains and ranges; OWL is used for the ontology and its semantic constructs; XSD
+                provides datatypes such as <code>xsd:string</code> and <code>xsd:gYear</code>.
             </p>
 
             <h3>Authority and classification sources</h3>
 
             <p>
-                External identifiers connect the selected entities to existing authority records and
-                Linked Open Data resources, including Wikidata, VIAF, SBN and the Library of Congress.
-                The classification layer uses LCGFT concepts for <em>Spy fiction</em>,
+                Wikidata, VIAF, SBN and the Library of Congress provide external identifiers for the
+                selected entities. The classification layer uses LCGFT concepts for <em>Spy fiction</em>,
                 <em>Spy films</em> and <em>Motion picture music</em>, while
-                <em>First-person shooter</em> is linked to Wikidata. These resources identify or classify
-                project entities but are not treated as ontologies defining the 00LOD data model.
+                <em>First-person shooter</em> is linked to Wikidata. These resources support
+                identification and classification rather than defining the ontology itself.
             </p>
         </section>
 
@@ -348,21 +347,16 @@
             <h2>Bond Ontology</h2>
 
             <p>
-                The conceptual model was implemented in Protégé as an OWL ontology.
-                <strong>BondOntology</strong> formalises the project-specific classes and properties
-                together with the semantic resources reused throughout the model.
+                Most of the 00LOD semantic model could be represented by reusing existing ontologies
+                and vocabularies. However, some concepts and relations central to the research question
+                required more specific semantics than the available terms could provide.
             </p>
 
             <p>
-                Reused classes and properties are integrated directly into the ontology, while
-                subclass and subproperty relations situate selected project terms within broader
-                semantic structures. The SKOS-based classification layer used by the RDF datasets
-                is also represented. The logical consistency of the ontology was checked with the
-                HermiT reasoner.
-            </p>
-
-            <p>
-                Only a small set of project-specific terms was introduced:
+                For this reason, a small project ontology, <strong>BondOntology</strong>, was created
+                to formalise only the project-specific classes and properties needed by 00LOD.
+                It was implemented in Protégé as an OWL ontology, serialised in Turtle and checked
+                for logical consistency with the HermiT reasoner.
             </p>
 
             <div class="ontology-vocabulary">
@@ -393,10 +387,9 @@
             </div>
 
             <p>
-                These terms were created only where the reused vocabularies did not provide a
-                sufficiently precise representation of the concepts or relations required by the
-                research question. Where possible, the local terms were connected to more general
-                reused semantics through subclass or subproperty relations.
+                The local vocabulary models recurring verbal expressions, narrative roles, visual and
+                musical markers and Bond's identifying code number, extending reused semantics only
+                where the project required greater precision.
             </p>
 
             <h3>Ontology access</h3>
@@ -420,10 +413,21 @@
                 </a>
                 -->
             </div>
+        </section>
+
+        <!-- Continue exploring -->
+        <div class="continue-grid page-links">
+            <a class="continue-card" href="../index.html">
+                <span class="continue-number">←</span>
+
+                <span class="continue-content">
+                    <span class="continue-label">Previous</span>
+                    <strong>Home</strong>
+                    <span>Return to the project overview and Mission Files.</span>
+                </span>
+            </a>
 
             <a class="continue-card" href="knowledge-representation.html">
-                <span class="continue-number">04</span>
-
                 <span class="continue-content">
                     <span class="continue-label">Next phase</span>
                     <strong>Knowledge Representation</strong>
@@ -432,7 +436,7 @@
 
                 <span class="continue-arrow">→</span>
             </a>
-        </section>
+        </div>
 
     </main>
 
