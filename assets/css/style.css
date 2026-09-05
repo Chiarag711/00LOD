@@ -1127,6 +1127,14 @@ body.dossier-open {
     font-size: 0.82rem;
 }
 
+.visualisation-caption a {
+    color: var(--gold-dark);
+}
+
+.visualisation-caption a:hover {
+    color: #665027;
+}
+
 .visualisation + h3 {
     margin-top: 4rem;
 }
@@ -1302,6 +1310,23 @@ body.dossier-open {
 
 .file-preview + .continue-card {
     margin-top: 3rem;
+}
+
+/* ---------------------------------
+   Generated HTML preview
+---------------------------------- */
+
+.html-preview {
+    display: block;
+
+    width: 100%;
+    height: 680px;
+
+    margin-top: 1.5rem;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(198, 161, 91, 0.28);
 }
 
 /* ---------------------------------
@@ -1931,6 +1956,14 @@ tr:hover td {
         grid-template-columns: 1fr;
 
         gap: 0.5rem;
+    }
+
+    .continue-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .html-preview {
+        height: 560px;
     }
 }
 

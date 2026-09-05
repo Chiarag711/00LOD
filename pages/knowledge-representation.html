@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Knowledge Representation | 00LOD</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Project assets -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/site.js" defer></script>
 </head>
 
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <a class="site-logo" href="../index.html" aria-label="00LOD home">
             <span class="logo-text">00LOD</span>
@@ -36,50 +39,320 @@
         </nav>
     </header>
 
+
     <main>
 
+        <!-- Page heading -->
         <section class="page-heading">
             <p class="eyebrow">Knowledge Representation</p>
             <h1>From text and metadata to RDF</h1>
         </section>
 
+
+        <!-- TEI Encoding -->
         <section class="section" id="tei">
+            <p class="eyebrow">01 / Text Encoding</p>
             <h2>TEI Encoding</h2>
 
-            <!-- TEI/XML sample and methodology -->
+            <p>
+                A selected sample of the
+                <a href="https://en.wikipedia.org/wiki/James_Bond" target="_blank" rel="noopener">English Wikipedia article on James Bond</a>
+                was encoded in TEI/XML. Passages were selected according to their relevance to the
+                research question and to the entities represented in the project; omitted passages are
+                explicitly marked with <code>&lt;gap reason="sampling"&gt;</code>.
+            </p>
+
+            <p>
+                The TEI header records the source and the entities required by the selected text,
+                associates local identifiers with external authority URIs through <code>@sameAs</code>,
+                defines the classifications used by the project and includes a
+                <code>&lt;listRelation&gt;</code> expressing the semantic relations that apply to the
+                encoded sample.
+            </p>
+
+            <h3>TEI/XML document</h3>
+
+            <details class="file-preview" open>
+                <summary>
+                    <span>007_tei.xml</span>
+                    <span>TEI / XML</span>
+                </summary>
+
+                <pre><code data-file-preview="../tei/007_tei.xml" data-lines="36">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../tei/007_tei.xml" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
         </section>
 
+
+        <!-- TEI to HTML -->
         <section class="section" id="tei-html">
+            <p class="eyebrow">02 / Transformation</p>
             <h2>TEI to HTML</h2>
 
-            <!-- XSLT transformation and generated HTML -->
+            <p>
+                The encoded TEI sample was transformed into HTML through an XSLT stylesheet.
+                Structural divisions and headings are converted into HTML sections, while titles,
+                quotations and annotated entities retain a distinct visual treatment. Sampling gaps
+                remain visible in the resulting page rather than being silently removed.
+            </p>
+
+            <p>
+                A short Python script based on <code>lxml</code> applies the stylesheet to
+                <strong>007_tei.xml</strong> and writes the resulting document as
+                <strong>007_tei.html</strong>.
+            </p>
+
+            <h3>XSLT stylesheet</h3>
+
+            <details class="file-preview">
+                <summary>
+                    <span>tei_to_html.xsl</span>
+                    <span>XSLT</span>
+                </summary>
+
+                <pre><code data-file-preview="../tei/tei_to_html.xsl" data-lines="32">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../tei/tei_to_html.xsl" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>Transformation script</h3>
+
+            <details class="file-preview">
+                <summary>
+                    <span>tei_to_html.py</span>
+                    <span>Python</span>
+                </summary>
+
+                <pre><code data-file-preview="../scripts/tei_to_html.py" data-lines="30">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../scripts/tei_to_html.py" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>HTML output</h3>
+
+            <p>
+                The generated page provides a human-readable rendering of the selected source text.
+                <a href="../tei/007_tei.html" target="_blank" rel="noopener">Open the generated HTML in a new tab ↗</a>
+            </p>
+
+            <iframe
+                class="html-preview"
+                src="../tei/007_tei.html"
+                title="HTML output generated from the TEI/XML sample"
+                loading="lazy">
+            </iframe>
         </section>
 
+
+        <!-- TEI to RDF -->
         <section class="section" id="tei-rdf">
+            <p class="eyebrow">03 / Semantic Transformation</p>
             <h2>TEI to RDF</h2>
 
-            <!-- Python transformation, Turtle output and RDF graph -->
+            <p>
+                The same TEI document was also used as a source for RDF production. A Python script
+                parses the XML and converts the semantic information encoded in the header into RDF
+                triples using RDFLib.
+            </p>
+
+            <p>
+                Local entities are reconciled with external resources by converting
+                <code>@sameAs</code> values into <code>owl:sameAs</code> statements, while
+                <code>&lt;relation&gt;</code> elements become RDF triples. The transformation also
+                generates resource labels, typed literal values and authority reconciliation
+                statements before serialising the graph in Turtle and parsing it again as a validation
+                step.
+            </p>
+
+            <h3>Transformation script</h3>
+
+            <details class="file-preview">
+                <summary>
+                    <span>tei_to_rdf.py</span>
+                    <span>Python / RDFLib</span>
+                </summary>
+
+                <pre><code data-file-preview="../scripts/tei_to_rdf.py" data-lines="36">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../scripts/tei_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>TEI-derived RDF</h3>
+
+            <p>
+                The resulting <strong>007_tei.ttl</strong> represents the entities and relations
+                contained in the selected TEI sample. It should therefore be read as a TEI-derived
+                subset rather than as the complete 00LOD dataset.
+            </p>
+
+            <details class="file-preview" open>
+                <summary>
+                    <span>007_tei.ttl</span>
+                    <span>Turtle / RDF</span>
+                </summary>
+
+                <pre><code data-file-preview="../rdf/007_tei.ttl" data-lines="34">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../rdf/007_tei.ttl" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>RDF visualization</h3>
+
+            <div class="visualisation visualisation-rdf">
+                <img src="../assets/graphs/007_tei_rdf_grapher.svg" alt="RDF graph generated from the TEI-derived dataset">
+
+                <p class="visualisation-caption">
+                    TEI-derived RDF graph · Visualization of the triples generated from the selected TEI sample.
+                    RDF Grapher may expand some prefixed predicates to their full IRIs.
+                    <a href="../assets/graphs/007_tei_rdf_grapher.svg" target="_blank" rel="noopener">Open full graph ↗</a>
+                </p>
+            </div>
         </section>
 
+
+        <!-- Metadata to RDF -->
         <section class="section" id="metadata-rdf">
+            <p class="eyebrow">04 / Metadata Transformation</p>
             <h2>Metadata to RDF</h2>
 
-            <!-- CSV metadata and csv_to_rdf.py -->
+            <p>
+                The complete project dataset was generated from the structured metadata collected for
+                the fourteen Mission Files. In <strong>items.csv</strong>, each row expresses a
+                subject, predicate and object together with the information required to distinguish
+                local resources, external URIs and literal values.
+            </p>
+
+            <p>
+                The Python transformation resolves local identifiers and prefixed names, creates the
+                corresponding RDF terms and serialises the resulting graph as
+                <strong>dataset_bond.ttl</strong>. As with the TEI transformation, the generated Turtle
+                file is parsed again to verify that the output is valid RDF.
+            </p>
+
+            <h3>Metadata source</h3>
+
+            <details class="file-preview" open>
+                <summary>
+                    <span>items.csv</span>
+                    <span>CSV</span>
+                </summary>
+
+                <pre><code data-file-preview="../metadata/items.csv" data-lines="24">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../metadata/items.csv" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>Transformation script</h3>
+
+            <details class="file-preview">
+                <summary>
+                    <span>csv_to_rdf.py</span>
+                    <span>Python / RDFLib</span>
+                </summary>
+
+                <pre><code data-file-preview="../scripts/csv_to_rdf.py" data-lines="36">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../scripts/csv_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
         </section>
 
+
+        <!-- RDF Dataset -->
         <section class="section" id="rdf-dataset">
+            <p class="eyebrow">05 / Linked Data Output</p>
             <h2>RDF Dataset</h2>
 
-            <!-- Complete dataset and RDF Grapher visualization -->
+            <p>
+                The final RDF dataset brings together the metadata, classifications, authority
+                connections and semantic relations associated with the fourteen Mission Files.
+                The data uses the reused vocabularies documented in the conceptual model together
+                with the project-specific terms defined by BondOntology.
+            </p>
+
+            <p>
+                The dataset is published in Turtle serialization and can also be inspected as a graph,
+                making the connections among the selected entities and external semantic resources
+                visible as a Linked Data network.
+            </p>
+
+            <h3>Complete Turtle dataset</h3>
+
+            <details class="file-preview" open>
+                <summary>
+                    <span>dataset_bond.ttl</span>
+                    <span>Turtle / RDF</span>
+                </summary>
+
+                <pre><code data-file-preview="../rdf/dataset_bond.ttl" data-lines="36">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../rdf/dataset_bond.ttl" target="_blank" rel="noopener">Open full file ↗</a>
+                </div>
+            </details>
+
+            <h3>Complete RDF visualization</h3>
+
+            <div class="visualisation visualisation-rdf">
+                <img src="../assets/graphs/dataset_bond_rdf_grapher.svg" alt="RDF graph of the complete 00LOD dataset">
+
+                <p class="visualisation-caption">
+                    Complete 00LOD RDF graph · Visualization generated from dataset_bond.ttl.
+                    RDF Grapher may display some predicates as full IRIs instead of their abbreviated prefixes.
+                    <a href="../assets/graphs/dataset_bond_rdf_grapher.svg" target="_blank" rel="noopener">Open full graph ↗</a>
+                </p>
+            </div>
         </section>
+
+
+        <!-- Page links -->
+        <div class="continue-grid page-links">
+            <a class="continue-card" href="knowledge-organization.html">
+                <span class="continue-number">←</span>
+
+                <span class="continue-content">
+                    <span class="continue-label">Previous phase</span>
+                    <strong>Knowledge Organization</strong>
+                    <span>Return to the theoretical model, conceptual model and ontology.</span>
+                </span>
+            </a>
+
+            <a class="continue-card" href="../index.html">
+                <span class="continue-content">
+                    <span class="continue-label">Project overview</span>
+                    <strong>Home</strong>
+                    <span>Return to the research question and Mission Files.</span>
+                </span>
+
+                <span class="continue-arrow">→</span>
+            </a>
+        </div>
 
     </main>
 
+
+    <a class="back-to-top" href="#">↑ Back to top</a>
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <p>
-            00LOD: Licence to Link — Information Science and Cultural Heritage
-        </p>
+        <p>© 2026 00LOD: Licence to Link — DHDK</p>
+        <p>Project by <a href="https://github.com/Chiarag711" target="_blank" rel="noopener">Chiara Genovese ↗</a></p>
     </footer>
 
 </body>
+
 </html>
