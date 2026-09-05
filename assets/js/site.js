@@ -162,3 +162,71 @@ if (dossiers.length) {
         }
     });
 }
+
+// Model zoom
+document.querySelectorAll("[data-model-viewer]").forEach(viewer => {
+    const image = viewer.querySelector("[data-model-image]");
+    const value = viewer.querySelector("[data-zoom-value]");
+    const zoomOut = viewer.querySelector('[data-model-zoom="out"]');
+    const zoomIn = viewer.querySelector('[data-model-zoom="in"]');
+
+    if (!image || !value) return;
+
+    let zoom = 100;
+
+    const updateZoom = () => {
+        image.style.setProperty("--model-zoom", `${zoom}%`);
+        value.textContent = `${zoom}%`;
+
+        if (zoomOut) zoomOut.disabled = zoom === 100;
+        if (zoomIn) zoomIn.disabled = zoom === 250;
+    };
+
+    viewer.addEventListener("click", event => {
+        const button = event.target.closest("[data-model-zoom]");
+
+        if (!button) return;
+
+        const action = button.dataset.modelZoom;
+
+        if (action === "in") {
+            zoom = Math.min(zoom + 25, 250);
+        } else if (action === "out") {
+            zoom = Math.max(zoom - 25, 100);
+        } else if (action === "reset") {
+            zoom = 100;
+        }
+
+        updateZoom();
+    });
+
+    updateZoom();
+});
+
+
+// File previews
+document.querySelectorAll("[data-file-preview]").forEach(async preview => {
+    const source = preview.dataset.filePreview;
+    const lineLimit = Number(preview.dataset.lines) || 30;
+
+    if (!source) return;
+
+    try {
+        const response = await fetch(source);
+
+        if (!response.ok) {
+            throw new Error("File could not be loaded");
+        }
+
+        const text = await response.text();
+        const lines = text.split(/\r?\n/);
+        const excerpt = lines.slice(0, lineLimit).join("\n");
+
+        preview.textContent =
+            excerpt +
+            (lines.length > lineLimit ? "\n\n…" : "");
+    } catch {
+        preview.textContent =
+            "Preview unavailable. Open the full file using the link below.";
+    }
+});

@@ -510,6 +510,31 @@ main {
     margin-top: 3rem;
 }
 
+.mission-group {
+    grid-column: 1 / -1;
+
+    margin: 2rem 0 0.25rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--gold);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.mission-group:first-child {
+    margin-top: 0;
+    padding-top: 0;
+
+    border-top: 0;
+}
+
 .mission-card {
     display: block;
     height: 100%;
@@ -1097,9 +1122,186 @@ body.dossier-open {
 .visualisation-caption {
     margin-top: 1rem;
 
-    color: var(--muted);
+    color: #777168;
 
     font-size: 0.82rem;
+}
+
+.visualisation + h3 {
+    margin-top: 4rem;
+}
+
+/* ---------------------------------
+   Model zoom
+---------------------------------- */
+
+.model-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.model-toolbar button {
+    min-width: 2.4rem;
+    height: 2.2rem;
+
+    padding: 0 0.75rem;
+
+    background: transparent;
+
+    border: 1px solid rgba(9, 10, 11, 0.18);
+
+    color: var(--gold-dark);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.model-toolbar button:hover:not(:disabled) {
+    background: rgba(143, 113, 57, 0.08);
+    border-color: rgba(143, 113, 57, 0.5);
+}
+
+.model-toolbar button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.model-zoom-value {
+    min-width: 3.5rem;
+
+    color: var(--gold-dark);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.68rem;
+
+    text-align: center;
+}
+
+.model-viewport {
+    max-height: 78vh;
+
+    overflow: auto;
+
+    overscroll-behavior: contain;
+}
+
+.model-viewport .model-zoom-image {
+    width: var(--model-zoom, 100%);
+    max-width: none;
+
+    margin: 0;
+}
+
+
+/* ---------------------------------
+   File previews
+---------------------------------- */
+
+.file-preview {
+    margin-top: 2.5rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+}
+
+.file-preview summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+
+    color: var(--text);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.72rem;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.file-preview summary::-webkit-details-marker {
+    display: none;
+}
+
+.file-preview summary::after {
+    content: "+";
+
+    color: var(--gold);
+
+    font-size: 1rem;
+}
+
+.file-preview[open] summary::after {
+    content: "−";
+}
+
+.file-preview summary span:last-of-type {
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.file-preview pre {
+    max-height: 30rem;
+
+    margin: 0;
+
+    overflow: auto;
+
+    border-right: 0;
+    border-left: 0;
+}
+
+.file-preview-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+}
+
+.file-preview-actions a {
+    color: var(--gold-light);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.file-preview-actions a:hover {
+    color: var(--white);
+}
+
+
+/* Space between ontology preview and next-page card */
+
+.file-preview + .continue-card {
+    margin-top: 3rem;
 }
 
 
@@ -1312,6 +1514,26 @@ td {
 
 tr:hover td {
     background: rgba(241, 239, 233, 0.025);
+}
+
+#conceptual-model th,
+#conceptual-model td {
+    vertical-align: top;
+}
+
+#conceptual-model th:nth-child(1),
+#conceptual-model td:nth-child(1) {
+    width: 22%;
+}
+
+#conceptual-model th:nth-child(2),
+#conceptual-model td:nth-child(2) {
+    width: 26%;
+}
+
+#conceptual-model th:nth-child(3),
+#conceptual-model td:nth-child(3) {
+    width: 52%;
 }
 
 /* ---------------------------------
@@ -1594,6 +1816,23 @@ tr:hover td {
 
     .idea-map figcaption {
         padding: 0 0.5rem;
+    }
+
+    .model-toolbar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .model-viewport {
+        max-height: 68vh;
+    }
+
+    .file-preview summary {
+        grid-template-columns: 1fr auto;
+    }
+
+    .file-preview summary span:last-of-type {
+        display: none;
     }
 }
 

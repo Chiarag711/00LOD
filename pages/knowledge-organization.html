@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Knowledge Organization | 00LOD</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Project assets -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/site.js" defer></script>
 </head>
 
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <a class="site-logo" href="../index.html" aria-label="00LOD home">
             <span class="logo-text">00LOD</span>
@@ -38,42 +41,380 @@
 
     <main>
 
+        <!-- Page heading -->
         <section class="page-heading">
             <p class="eyebrow">Knowledge Organization</p>
             <h1>From cultural connections to a formal model</h1>
         </section>
 
-        <section class="section" id="idea-conceptualisation">
-            <h2>Idea Conceptualisation</h2>
-
-            <!-- Selected entities and initial research framework -->
-        </section>
-
+        <!-- Theoretical model -->
         <section class="section" id="theoretical-model">
+            <p class="eyebrow">01 / Knowledge Modeling</p>
             <h2>Theoretical Model</h2>
 
-            <!-- Theoretical model -->
+            <p>
+                The theoretical model was developed from the fourteen selected entities and the relationships identified
+                during the initial idea conceptualisation. Each connection was expressed through natural-language
+                statements, before introducing specific ontology terms or RDF properties.
+            </p>
+
+            <p>
+                The model highlights both the relation of each entity to James Bond and the connections among the selected
+                items themselves. In this way, Bond's literary origins, institutional identity, audiovisual conventions,
+                material associations, verbal markers and later cultural appearances can be read as parts of the same
+                network of cultural identity.
+            </p>
+
+            <p>
+                The labels <em>Origins</em>, <em>Character system</em>, <em>Material identity</em>,
+                <em>Institutional identity</em>, <em>Verbal identity</em>, <em>Audiovisual identity</em>
+                and <em>Cultural afterlife</em> are analytical groupings introduced to organise the model
+                and make the different dimensions of Bond's cultural identity easier to read. They are
+                not intended as semantic classes or formal categories and are therefore not translated
+                into the conceptual model or encoded in the ontology and RDF datasets.
+            </p>
+
+            <div class="visualisation visualisation-model model-viewer" data-model-viewer>
+                <div class="model-toolbar" aria-label="Theoretical model zoom controls">
+                    <button type="button" data-model-zoom="out" aria-label="Zoom out">−</button>
+                    <span class="model-zoom-value" data-zoom-value aria-live="polite">100%</span>
+                    <button type="button" data-model-zoom="in" aria-label="Zoom in">+</button>
+                    <button type="button" data-model-zoom="reset">Reset</button>
+                </div>
+
+                <div class="model-viewport">
+                    <img class="model-zoom-image" data-model-image src="../models/theoretical_model.svg" alt="Theoretical model of the 00LOD project">
+                </div>
+
+                <p class="visualisation-caption">
+                    Theoretical Model · Natural-language representation of the selected entities and their relationships.
+                </p>
+            </div>
         </section>
 
+        <!-- Conceptual model -->
         <section class="section" id="conceptual-model">
+            <p class="eyebrow">02 / Semantic Formalisation</p>
             <h2>Conceptual Model</h2>
 
-            <!-- Conceptual model -->
+            <p>
+                Starting from the entities and predicates expressed in natural language in the theoretical model, the
+                conceptual model formalises them through RDF classes, properties and reusable URIs. Existing ontologies
+                and controlled vocabularies were preferred whenever their semantics matched the intended entity or
+                relation, while project-specific terms were introduced only where a suitable reusable term was not
+                available.
+            </p>
+
+            <p>
+                The selection of reusable terms was based on their semantic definition and modelling role rather than on
+                lexical similarity alone. External authority identifiers were retained to connect the selected entities
+                with existing knowledge bases, while SKOS concepts were used for the project's classification layer.
+            </p>
+
+            <div class="visualisation visualisation-model model-viewer" data-model-viewer>
+                <div class="model-toolbar" aria-label="Conceptual model zoom controls">
+                    <button type="button" data-model-zoom="out" aria-label="Zoom out">−</button>
+                    <span class="model-zoom-value" data-zoom-value aria-live="polite">100%</span>
+                    <button type="button" data-model-zoom="in" aria-label="Zoom in">+</button>
+                    <button type="button" data-model-zoom="reset">Reset</button>
+                </div>
+
+                <div class="model-viewport">
+                    <img class="model-zoom-image" data-model-image src="../models/conceptual_model.svg" alt="Conceptual model of the 00LOD project">
+                </div>
+
+                <p class="visualisation-caption">
+                    Conceptual Model · Semantic formalisation of the theoretical model through reused vocabularies,
+                    authority identifiers and project-specific terms.
+                </p>
+            </div>
+
+            <h3>Ontologies and vocabularies reused</h3>
+
+            <p>
+                The conceptual model combines terms from existing ontologies and vocabularies according
+                to the semantic role required by each entity or relation. Reuse was preferred whenever
+                an existing term adequately expressed the intended meaning; project-specific terms were
+                introduced only where the available resources did not provide a sufficiently appropriate
+                solution.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Terms / role in 00LOD</th>
+                        <th>Why it was reused</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://dbpedia.org/ontology/" target="_blank" rel="noopener">
+                                DBpedia Ontology
+                            </a>
+                            <br><code>dbo:</code>
+                        </td>
+                        <td>
+                            <code>FictionalCharacter</code>, <code>GovernmentAgency</code>,
+                            <code>Novel</code>, <code>Film</code> and <code>affiliation</code>.
+                        </td>
+                        <td>
+                            Provides established classes for several central entities in the project and
+                            an existing relation for Bond's affiliation with MI6.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://schema.org/" target="_blank" rel="noopener">
+                                Schema.org
+                            </a>
+                            <br><code>schema:</code>
+                        </td>
+                        <td>
+                            <code>CreativeWork</code>, <code>Person</code>, <code>MusicComposition</code>,
+                            <code>ProductModel</code>, <code>Quotation</code>, <code>VideoGame</code>,
+                            <code>character</code> and <code>spokenByCharacter</code>.
+                        </td>
+                        <td>
+                            Offers broadly interoperable classes and properties suitable for the heterogeneous
+                            people, works, products and verbal expressions represented in 00LOD.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener">
+                                Dublin Core Terms
+                            </a>
+                            <br><code>dcterms:</code>
+                        </td>
+                        <td>
+                            <code>creator</code>, <code>hasPart</code>, <code>references</code>,
+                            <code>type</code>, <code>identifier</code>, <code>issued</code> and
+                            <code>date</code>.
+                        </td>
+                        <td>
+                            Provides established general-purpose descriptive and relational properties
+                            for cultural resources, identifiers, classifications and dates.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/" target="_blank" rel="noopener">
+                                DCMI Type Vocabulary
+                            </a>
+                            <br><code>dcmitype:</code>
+                        </td>
+                        <td>
+                            <code>Image</code>, <code>MovingImage</code> and <code>Event</code>.
+                        </td>
+                        <td>
+                            Supplies established high-level resource types for audiovisual materials
+                            and events represented in the project.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" target="_blank" rel="noopener">
+                                DOLCE+DnS Ultralite
+                            </a>
+                            <br><code>dul:</code>
+                        </td>
+                        <td>
+                            <code>Role</code>, used as the superclass of the local
+                            <code>bond:StockCharacter</code> class.
+                        </td>
+                        <td>
+                            Allows the Bond girl to be modelled as a recurring narrative role rather than
+                            as one individual fictional character.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="http://www.europeana.eu/schemas/edm/" target="_blank" rel="noopener">
+                                Europeana Data Model
+                            </a>
+                            <br><code>edm:</code>
+                        </td>
+                        <td>
+                            <code>isRelatedTo</code>, reused as the superproperty of several local
+                            associative relations.
+                        </td>
+                        <td>
+                            Provides a deliberately broad existing relation under which more specific
+                            project-defined cultural associations can be organised.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="http://rdaregistry.info/Elements/u/" target="_blank" rel="noopener">
+                                RDA Unconstrained Properties
+                            </a>
+                            <br><code>rdau:</code>
+                        </td>
+                        <td>
+                            <code>P60732</code> and <code>P60723</code>, relating film and moving-image
+                            resources to musical compositions.
+                        </td>
+                        <td>
+                            Provides existing bibliographic relations for connections between audiovisual
+                            resources and their associated music.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="http://purl.obolibrary.org/obo/FOODON_03315855" target="_blank" rel="noopener">
+                                FoodOn
+                            </a>
+                            <br><code>foodon:</code>
+                        </td>
+                        <td>
+                            <code>FOODON_03315855</code>, used for the vodka martini.
+                        </td>
+                        <td>
+                            Supplies a domain-specific semantic class for the cocktail instead of creating
+                            a generic local food or beverage class.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.wikidata.org/wiki/Property:P4584" target="_blank" rel="noopener">
+                                Wikidata Direct Properties
+                            </a>
+                            <br><code>wdt:</code>
+                        </td>
+                        <td>
+                            <code>P4584</code> — first appearance — relating James Bond to
+                            <em>Casino Royale</em>.
+                        </td>
+                        <td>
+                            Provides an existing property expressing the specific first-appearance relation
+                            required by the project.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.w3.org/TR/skos-reference/" target="_blank" rel="noopener">
+                                SKOS
+                            </a>
+                            <br><code>skos:</code>
+                        </td>
+                        <td>
+                            <code>Concept</code>, used as the range of <code>dcterms:type</code> for the
+                            classification layer.
+                        </td>
+                        <td>
+                            Allows genres and other classifications to be represented as controlled
+                            concepts linked to external knowledge organization systems.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Core Semantic Web standards</h3>
+
+            <p>
+                RDF, RDFS, OWL and XML Schema datatypes provide the formal infrastructure of the model.
+                RDF is used for typing statements, RDFS for resources, literals, subclass relations and
+                schema-level definitions, OWL for the ontology itself and its classes and properties,
+                and XSD for datatype values such as <code>xsd:string</code> and <code>xsd:gYear</code>.
+            </p>
+
+            <h3>Authority and classification sources</h3>
+
+            <p>
+                External identifiers connect the selected entities to existing authority records and
+                Linked Open Data resources, including Wikidata, VIAF, SBN and the Library of Congress.
+                The classification layer uses LCGFT concepts for <em>Spy fiction</em>,
+                <em>Spy films</em> and <em>Motion picture music</em>, while
+                <em>First-person shooter</em> is linked to Wikidata. These resources identify or classify
+                project entities but are not treated as ontologies defining the 00LOD data model.
+            </p>
         </section>
 
+        <!-- Ontology -->
         <section class="section" id="ontology">
+            <p class="eyebrow">03 / Ontology Implementation</p>
             <h2>Bond Ontology</h2>
 
-            <!-- Ontology description and LODE documentation -->
+            <p>
+                The conceptual model was implemented in Protégé as an OWL ontology. <strong>BondOntology.ttl</strong>
+                formalises the project-specific classes and properties and connects them with the reused semantic
+                resources represented in the conceptual model.
+            </p>
+
+            <p>
+                The ontology also includes the SKOS-based classification layer used by the RDF datasets and the
+                alignments required to connect local terms with external semantic resources. Its logical consistency was
+                checked with the HermiT reasoner.
+            </p>
+
+            <p>
+                The ontology introduces a deliberately limited local vocabulary: the classes
+                <code>bond:Catchphrase</code> and <code>bond:StockCharacter</code>; the object properties
+                <code>bond:featuresNarrativeRole</code>, <code>bond:hasRelatedCharacter</code>,
+                <code>bond:hasVisualMarker</code> and <code>bond:hasMusicalMarker</code>; and the datatype
+                property <code>bond:hasCodeNumber</code>. These terms were created only where the reused
+                vocabularies did not provide a sufficiently precise representation of the relations
+                required by the research question.
+            </p>
+
+            <h3>Ontology source</h3>
+
+            <details class="file-preview" open>
+                <summary>
+                    <span>BondOntology.ttl</span>
+                    <span>Turtle / OWL</span>
+                </summary>
+
+                <pre><code data-file-preview="../ontology/BondOntology.ttl" data-lines="34">Loading preview…</code></pre>
+
+                <div class="file-preview-actions">
+                    <a href="../ontology/BondOntology.ttl" target="_blank" rel="noopener">Open full file ↗</a>
+
+                    <!--
+                    Add after publishing the repository and generating the LODE documentation:
+
+                    <a href="PASTE_LODE_DOCUMENTATION_URL_HERE" target="_blank" rel="noopener">
+                        LODE documentation ↗
+                    </a>
+                    -->
+                </div>
+            </details>
+
+            <a class="continue-card" href="knowledge-representation.html">
+                <span class="continue-number">04</span>
+
+                <span class="continue-content">
+                    <span class="continue-label">Next phase</span>
+                    <strong>Knowledge Representation</strong>
+                    <span>Continue to TEI encoding, transformations and RDF datasets.</span>
+                </span>
+
+                <span class="continue-arrow">→</span>
+            </a>
         </section>
 
     </main>
 
+    <a class="back-to-top" href="#">↑ Back to top</a>
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <p>
-            00LOD: Licence to Link — Information Science and Cultural Heritage
-        </p>
+        <p>© 2026 00LOD: Licence to Link — DHDK</p>
+        <p>Project by <a href="https://github.com/Chiarag711" target="_blank" rel="noopener">Chiara Genovese ↗</a></p>
     </footer>
 
 </body>
+
 </html>
