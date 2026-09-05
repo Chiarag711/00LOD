@@ -1140,8 +1140,10 @@ body.dossier-open {
 }
 
 .file-preview + h3,
+.file-grid + h3,
 .html-preview + h3,
-.visualisation + h3 {
+.visualisation + h3,
+.visualisation + p {
     margin-top: 4rem;
 }
 
@@ -1222,6 +1224,27 @@ body.dossier-open {
 /* ---------------------------------
    File previews
 ---------------------------------- */
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.25rem;
+
+    margin-top: 3rem;
+}
+
+.file-block {
+    min-width: 0;
+}
+
+.file-block h3 {
+    margin-top: 0;
+}
+
+.file-block .file-preview {
+    margin-top: 1.5rem;
+}
 
 .file-preview {
     margin-top: 2.5rem;
@@ -1312,6 +1335,77 @@ body.dossier-open {
 }
 
 /* ---------------------------------
+   CSV preview
+---------------------------------- */
+
+.csv-table-wrapper {
+    max-height: 30rem;
+
+    overflow: auto;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.csv-table {
+    width: max-content;
+    min-width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.76rem;
+}
+
+.csv-table th,
+.csv-table td {
+    padding: 0.75rem 1rem;
+
+    white-space: nowrap;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.csv-table th:last-child,
+.csv-table td:last-child {
+    border-right: 0;
+}
+
+.csv-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    background: var(--surface-light);
+
+    color: var(--gold);
+
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.csv-table td {
+    background: var(--surface);
+
+    color: var(--text);
+}
+
+.csv-table tbody tr:hover td {
+    background: var(--surface-light);
+}
+
+/* Give the CSV more room while it is being inspected */
+.file-block:has(.csv-preview[open]) {
+    grid-column: 1 / -1;
+}
+
+/* ---------------------------------
    Generated HTML preview
 ---------------------------------- */
 
@@ -1326,6 +1420,58 @@ body.dossier-open {
     background: #ffffff;
 
     border: 1px solid rgba(198, 161, 91, 0.28);
+}
+
+.html-output {
+    margin-top: 1.5rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+}
+
+.html-output summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+
+    color: var(--text);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.72rem;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.html-output summary::-webkit-details-marker {
+    display: none;
+}
+
+.html-output summary::after {
+    content: "+";
+
+    color: var(--gold);
+
+    font-size: 1rem;
+}
+
+.html-output[open] summary::after {
+    content: "−";
+}
+
+.html-output summary span:last-of-type {
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 /* ---------------------------------
@@ -1957,12 +2103,21 @@ tr:hover td {
         gap: 0.5rem;
     }
 
+    .file-grid,
     .continue-grid {
         grid-template-columns: 1fr;
     }
 
     .html-preview {
         height: 560px;
+    }
+
+    .html-output summary {
+        grid-template-columns: 1fr auto;
+    }
+
+    .html-output summary span:last-of-type {
+        display: none;
     }
 }
 

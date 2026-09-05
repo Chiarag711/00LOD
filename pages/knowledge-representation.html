@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" defer></script>
+
     <!-- Project assets -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/site.js" defer></script>
@@ -105,49 +109,67 @@
                 <strong>007_tei.html</strong>.
             </p>
 
-            <h3>XSLT stylesheet</h3>
+            <div class="file-grid">
+                <div class="file-block">
+                    <h3>XSLT stylesheet</h3>
 
-            <details class="file-preview">
-                <summary>
-                    <span>tei_to_html.xsl</span>
-                    <span>XSLT</span>
-                </summary>
+                    <details class="file-preview">
+                        <summary>
+                            <span>tei_to_html.xsl</span>
+                            <span>XSLT</span>
+                        </summary>
 
-                <pre><code data-file-preview="../tei/tei_to_html.xsl" data-lines="32">Loading preview…</code></pre>
+                        <pre><code data-file-preview="../tei/tei_to_html.xsl" data-lines="32">Loading preview…</code></pre>
 
-                <div class="file-preview-actions">
-                    <a href="../tei/tei_to_html.xsl" target="_blank" rel="noopener">Open full file ↗</a>
+                        <div class="file-preview-actions">
+                            <a href="../tei/tei_to_html.xsl" target="_blank" rel="noopener">Open full file ↗</a>
+                        </div>
+                    </details>
                 </div>
-            </details>
 
-            <h3>Transformation script</h3>
+                <div class="file-block">
+                    <h3>Transformation script</h3>
 
-            <details class="file-preview">
-                <summary>
-                    <span>tei_to_html.py</span>
-                    <span>Python</span>
-                </summary>
+                    <details class="file-preview">
+                        <summary>
+                            <span>tei_to_html.py</span>
+                            <span>Python</span>
+                        </summary>
 
-                <pre><code data-file-preview="../scripts/tei_to_html.py" data-lines="30">Loading preview…</code></pre>
+                        <pre><code data-file-preview="../scripts/tei_to_html.py" data-lines="30">Loading preview…</code></pre>
 
-                <div class="file-preview-actions">
-                    <a href="../scripts/tei_to_html.py" target="_blank" rel="noopener">Open full file ↗</a>
+                        <div class="file-preview-actions">
+                            <a href="../scripts/tei_to_html.py" target="_blank" rel="noopener">Open full file ↗</a>
+                        </div>
+                    </details>
                 </div>
-            </details>
+            </div>
 
             <h3>HTML output</h3>
 
             <p>
                 The generated page provides a human-readable rendering of the selected source text.
-                <a href="../tei/007_tei.html" target="_blank" rel="noopener">Open the generated HTML in a new tab ↗</a>
             </p>
 
-            <iframe
-                class="html-preview"
-                src="../tei/007_tei.html"
-                title="HTML output generated from the TEI/XML sample"
-                loading="lazy">
-            </iframe>
+            <details class="html-output">
+                <summary>
+                    <span>007_tei.html</span>
+                    <span>Generated HTML</span>
+                </summary>
+
+                <iframe
+                    class="html-preview"
+                    src="../tei/007_tei.html"
+                    title="HTML output generated from the TEI/XML sample"
+                    loading="lazy">
+                </iframe>
+
+                <div class="file-preview-actions">
+                    <a href="../tei/007_tei.html" target="_blank" rel="noopener">
+                        Open in a new tab ↗
+                    </a>
+                </div>
+            </details>
         </section>
 
 
@@ -171,46 +193,65 @@
                 step.
             </p>
 
-            <h3>Transformation script</h3>
-
-            <details class="file-preview">
-                <summary>
-                    <span>tei_to_rdf.py</span>
-                    <span>Python / RDFLib</span>
-                </summary>
-
-                <pre><code data-file-preview="../scripts/tei_to_rdf.py" data-lines="36">Loading preview…</code></pre>
-
-                <div class="file-preview-actions">
-                    <a href="../scripts/tei_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
-                </div>
-            </details>
-
-            <h3>TEI-derived RDF</h3>
-
             <p>
                 The resulting <strong>007_tei.ttl</strong> represents the entities and relations
                 contained in the selected TEI sample. It should therefore be read as a TEI-derived
                 subset rather than as the complete 00LOD dataset.
             </p>
 
-            <details class="file-preview" open>
-                <summary>
-                    <span>007_tei.ttl</span>
-                    <span>Turtle / RDF</span>
-                </summary>
+            <div class="file-grid">
+                <div class="file-block">
+                    <h3>Transformation script</h3>
 
-                <pre><code data-file-preview="../rdf/007_tei.ttl" data-lines="34">Loading preview…</code></pre>
+                    <details class="file-preview">
+                        <summary>
+                            <span>tei_to_rdf.py</span>
+                            <span>Python / RDFLib</span>
+                        </summary>
 
-                <div class="file-preview-actions">
-                    <a href="../rdf/007_tei.ttl" target="_blank" rel="noopener">Open full file ↗</a>
+                        <pre><code data-file-preview="../scripts/tei_to_rdf.py" data-lines="36">Loading preview…</code></pre>
+
+                        <div class="file-preview-actions">
+                            <a href="../scripts/tei_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
+                        </div>
+                    </details>
                 </div>
-            </details>
+
+                <div class="file-block">
+                    <h3>TEI-derived RDF</h3>
+
+                    <details class="file-preview">
+                        <summary>
+                            <span>007_tei.ttl</span>
+                            <span>Turtle / RDF</span>
+                        </summary>
+
+                        <pre><code data-file-preview="../rdf/007_tei.ttl" data-lines="34">Loading preview…</code></pre>
+
+                        <div class="file-preview-actions">
+                            <a href="../rdf/007_tei.ttl" target="_blank" rel="noopener">Open full file ↗</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
 
             <h3>RDF visualization</h3>
 
-            <div class="visualisation visualisation-rdf">
-                <img src="../assets/graphs/007_tei_rdf_grapher.svg" alt="RDF graph generated from the TEI-derived dataset">
+            <div class="visualisation visualisation-rdf model-viewer" data-model-viewer>
+                <div class="model-toolbar" aria-label="TEI-derived RDF graph zoom controls">
+                    <button type="button" data-model-zoom="out" aria-label="Zoom out">−</button>
+                    <span class="model-zoom-value" data-zoom-value aria-live="polite">100%</span>
+                    <button type="button" data-model-zoom="in" aria-label="Zoom in">+</button>
+                    <button type="button" data-model-zoom="reset">Reset</button>
+                </div>
+
+                <div class="model-viewport">
+                    <img
+                        class="model-zoom-image"
+                        data-model-image
+                        src="../assets/graphs/007_tei_rdf_grapher.svg"
+                        alt="RDF graph generated from the TEI-derived dataset">
+                </div>
 
                 <p class="visualisation-caption">
                     TEI-derived RDF graph · Visualization of the triples generated from the selected TEI sample.
@@ -236,63 +277,66 @@
             <p>
                 The Python transformation resolves local identifiers and prefixed names, creates the
                 corresponding RDF terms and serialises the resulting graph as
-                <strong>dataset_bond.ttl</strong>. As with the TEI transformation, the generated Turtle
-                file is parsed again to verify that the output is valid RDF.
+                <strong>dataset_bond.ttl</strong>. The generated Turtle file is parsed again to verify
+                that the output is valid RDF.
             </p>
 
-            <h3>Metadata source</h3>
+            <div class="file-grid">
+                <div class="file-block">
+                    <h3>Metadata source</h3>
 
-            <details class="file-preview" open>
-                <summary>
-                    <span>items.csv</span>
-                    <span>CSV</span>
-                </summary>
+                    <details class="file-preview csv-preview">
+                        <summary>
+                            <span>items.csv</span>
+                            <span>CSV</span>
+                        </summary>
 
-                <pre><code data-file-preview="../metadata/items.csv" data-lines="24">Loading preview…</code></pre>
+                        <div class="csv-table-wrapper">
+                            <table class="csv-table" data-csv-table="../metadata/items.csv">
+                                <tbody>
+                                    <tr>
+                                        <td>Loading dataset…</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                <div class="file-preview-actions">
-                    <a href="../metadata/items.csv" target="_blank" rel="noopener">Open full file ↗</a>
+                        <div class="file-preview-actions">
+                            <a href="../metadata/items.csv" target="_blank" rel="noopener">
+                                Open full file ↗
+                            </a>
+                        </div>
+                    </details>
                 </div>
-            </details>
 
-            <h3>Transformation script</h3>
+                <div class="file-block">
+                    <h3>Transformation script</h3>
+
+                    <details class="file-preview">
+                        <summary>
+                            <span>csv_to_rdf.py</span>
+                            <span>Python / RDFLib</span>
+                        </summary>
+
+                        <pre><code data-file-preview="../scripts/csv_to_rdf.py" data-lines="36">Loading preview…</code></pre>
+
+                        <div class="file-preview-actions">
+                            <a href="../scripts/csv_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h3>RDF dataset</h3>
+
+            <p>
+                The resulting <strong>dataset_bond.ttl</strong> brings together the metadata,
+                classifications, authority connections and semantic relations associated with the
+                fourteen Mission Files. It uses the reused vocabularies documented in the semantic
+                model together with the project-specific terms defined by BondOntology.
+            </p>
 
             <details class="file-preview">
-                <summary>
-                    <span>csv_to_rdf.py</span>
-                    <span>Python / RDFLib</span>
-                </summary>
-
-                <pre><code data-file-preview="../scripts/csv_to_rdf.py" data-lines="36">Loading preview…</code></pre>
-
-                <div class="file-preview-actions">
-                    <a href="../scripts/csv_to_rdf.py" target="_blank" rel="noopener">Open full file ↗</a>
-                </div>
-            </details>
-        </section>
-
-
-        <!-- RDF Dataset -->
-        <section class="section" id="rdf-dataset">
-            <p class="eyebrow">05 / Linked Data Output</p>
-            <h2>RDF Dataset</h2>
-
-            <p>
-                The final RDF dataset brings together the metadata, classifications, authority
-                connections and semantic relations associated with the fourteen Mission Files.
-                The data uses the reused vocabularies documented in the conceptual model together
-                with the project-specific terms defined by BondOntology.
-            </p>
-
-            <p>
-                The dataset is published in Turtle serialization and can also be inspected as a graph,
-                making the connections among the selected entities and external semantic resources
-                visible as a Linked Data network.
-            </p>
-
-            <h3>Complete Turtle dataset</h3>
-
-            <details class="file-preview" open>
                 <summary>
                     <span>dataset_bond.ttl</span>
                     <span>Turtle / RDF</span>
@@ -305,10 +349,23 @@
                 </div>
             </details>
 
-            <h3>Complete RDF visualization</h3>
+            <h3>RDF visualization</h3>
 
-            <div class="visualisation visualisation-rdf">
-                <img src="../assets/graphs/dataset_bond_rdf_grapher.svg" alt="RDF graph of the complete 00LOD dataset">
+            <div class="visualisation visualisation-rdf model-viewer" data-model-viewer>
+                <div class="model-toolbar" aria-label="Complete RDF graph zoom controls">
+                    <button type="button" data-model-zoom="out" aria-label="Zoom out">−</button>
+                    <span class="model-zoom-value" data-zoom-value aria-live="polite">100%</span>
+                    <button type="button" data-model-zoom="in" aria-label="Zoom in">+</button>
+                    <button type="button" data-model-zoom="reset">Reset</button>
+                </div>
+
+                <div class="model-viewport">
+                    <img
+                        class="model-zoom-image"
+                        data-model-image
+                        src="../assets/graphs/dataset_bond_rdf_grapher.svg"
+                        alt="RDF graph of the complete 00LOD dataset">
+                </div>
 
                 <p class="visualisation-caption">
                     Complete 00LOD RDF graph · Visualization generated from dataset_bond.ttl.
@@ -316,8 +373,15 @@
                     <a href="../assets/graphs/dataset_bond_rdf_grapher.svg" target="_blank" rel="noopener">Open full graph ↗</a>
                 </p>
             </div>
-        </section>
 
+            <p>
+                Together, the TEI- and metadata-based workflows translate the selected sources and
+                descriptive data into interoperable RDF representations. By connecting the fourteen
+                Mission Files through shared identifiers, classifications and semantic relations, the
+                resulting Linked Data network makes explicit the cultural, narrative and material
+                associations through which James Bond is represented as a cultural icon.
+            </p>
+        </section>
 
         <!-- Page links -->
         <div class="continue-grid page-links">
