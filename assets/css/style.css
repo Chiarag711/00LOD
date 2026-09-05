@@ -1304,6 +1304,89 @@ body.dossier-open {
     margin-top: 3rem;
 }
 
+/* ---------------------------------
+   Ontology access
+---------------------------------- */
+
+.ontology-vocabulary {
+    max-width: 900px;
+
+    margin: 2rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.ontology-vocabulary-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+
+    gap: 2rem;
+
+    padding: 1rem 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.ontology-vocabulary-label {
+    color: var(--gold);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.ontology-vocabulary-terms {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.4rem 1.25rem;
+}
+
+.ontology-vocabulary-terms code {
+    color: var(--text);
+
+    font-size: 0.82rem;
+}
+
+.ontology-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin: 1.5rem 0 3rem;
+}
+
+.ontology-actions a {
+    padding: 0.75rem 1rem;
+
+    border: 1px solid var(--border);
+
+    color: var(--gold-light);
+
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ontology-actions a:hover {
+    background: var(--surface);
+    border-color: var(--border-gold);
+
+    color: var(--white);
+}
 
 /* ---------------------------------
    Idea Conceptualisation
@@ -1833,6 +1916,12 @@ tr:hover td {
 
     .file-preview summary span:last-of-type {
         display: none;
+    }
+
+    .ontology-vocabulary-row {
+        grid-template-columns: 1fr;
+
+        gap: 0.5rem;
     }
 }
 

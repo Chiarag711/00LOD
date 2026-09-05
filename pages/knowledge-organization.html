@@ -348,49 +348,78 @@
             <h2>Bond Ontology</h2>
 
             <p>
-                The conceptual model was implemented in Protégé as an OWL ontology. <strong>BondOntology.ttl</strong>
-                formalises the project-specific classes and properties and connects them with the reused semantic
-                resources represented in the conceptual model.
+                The conceptual model was implemented in Protégé as an OWL ontology.
+                <strong>BondOntology</strong> formalises the project-specific classes and properties
+                together with the semantic resources reused throughout the model.
             </p>
 
             <p>
-                The ontology also includes the SKOS-based classification layer used by the RDF datasets and the
-                alignments required to connect local terms with external semantic resources. Its logical consistency was
-                checked with the HermiT reasoner.
+                Reused classes and properties are integrated directly into the ontology, while
+                subclass and subproperty relations situate selected project terms within broader
+                semantic structures. The SKOS-based classification layer used by the RDF datasets
+                is also represented. The logical consistency of the ontology was checked with the
+                HermiT reasoner.
             </p>
 
             <p>
-                The ontology introduces a deliberately limited local vocabulary: the classes
-                <code>bond:Catchphrase</code> and <code>bond:StockCharacter</code>; the object properties
-                <code>bond:featuresNarrativeRole</code>, <code>bond:hasRelatedCharacter</code>,
-                <code>bond:hasVisualMarker</code> and <code>bond:hasMusicalMarker</code>; and the datatype
-                property <code>bond:hasCodeNumber</code>. These terms were created only where the reused
-                vocabularies did not provide a sufficiently precise representation of the relations
-                required by the research question.
+                Only a small set of project-specific terms was introduced:
             </p>
 
-            <h3>Ontology source</h3>
-
-            <details class="file-preview" open>
-                <summary>
-                    <span>BondOntology.ttl</span>
-                    <span>Turtle / OWL</span>
-                </summary>
-
-                <pre><code data-file-preview="../ontology/BondOntology.ttl" data-lines="34">Loading preview…</code></pre>
-
-                <div class="file-preview-actions">
-                    <a href="../ontology/BondOntology.ttl" target="_blank" rel="noopener">Open full file ↗</a>
-
-                    <!--
-                    Add after publishing the repository and generating the LODE documentation:
-
-                    <a href="PASTE_LODE_DOCUMENTATION_URL_HERE" target="_blank" rel="noopener">
-                        LODE documentation ↗
-                    </a>
-                    -->
+            <div class="ontology-vocabulary">
+                <div class="ontology-vocabulary-row">
+                    <span class="ontology-vocabulary-label">Classes</span>
+                    <span class="ontology-vocabulary-terms">
+                        <code>bond:Catchphrase</code>
+                        <code>bond:StockCharacter</code>
+                    </span>
                 </div>
-            </details>
+
+                <div class="ontology-vocabulary-row">
+                    <span class="ontology-vocabulary-label">Object properties</span>
+                    <span class="ontology-vocabulary-terms">
+                        <code>bond:featuresNarrativeRole</code>
+                        <code>bond:hasRelatedCharacter</code>
+                        <code>bond:hasVisualMarker</code>
+                        <code>bond:hasMusicalMarker</code>
+                    </span>
+                </div>
+
+                <div class="ontology-vocabulary-row">
+                    <span class="ontology-vocabulary-label">Datatype property</span>
+                    <span class="ontology-vocabulary-terms">
+                        <code>bond:hasCodeNumber</code>
+                    </span>
+                </div>
+            </div>
+
+            <p>
+                These terms were created only where the reused vocabularies did not provide a
+                sufficiently precise representation of the concepts or relations required by the
+                research question. Where possible, the local terms were connected to more general
+                reused semantics through subclass or subproperty relations.
+            </p>
+
+            <h3>Ontology access</h3>
+
+            <p>
+                The ontology is available in Turtle serialization. Human-readable documentation
+                will also be provided through LODE once the published ontology URI is publicly
+                accessible.
+            </p>
+
+            <div class="ontology-actions">
+                <a href="../ontology/BondOntology.ttl" target="_blank" rel="noopener">
+                    View Turtle source ↗
+                </a>
+
+                <!--
+                Activate after publishing and testing the ontology with LODE:
+
+                <a href="PASTE_LODE_DOCUMENTATION_URL_HERE" target="_blank" rel="noopener">
+                    LODE documentation ↗
+                </a>
+                -->
+            </div>
 
             <a class="continue-card" href="knowledge-representation.html">
                 <span class="continue-number">04</span>
