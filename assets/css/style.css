@@ -444,6 +444,10 @@ main {
     background: var(--gold);
 }
 
+.section h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
 
 /* ---------------------------------
    Project brief
@@ -1135,6 +1139,8 @@ body.dossier-open {
     color: #665027;
 }
 
+.file-preview + h3,
+.html-preview + h3,
 .visualisation + h3 {
     margin-top: 4rem;
 }
@@ -1303,13 +1309,6 @@ body.dossier-open {
 
 .file-preview-actions a:hover {
     color: var(--white);
-}
-
-
-/* Space between ontology preview and next-page card */
-
-.file-preview + .continue-card {
-    margin-top: 3rem;
 }
 
 /* ---------------------------------
