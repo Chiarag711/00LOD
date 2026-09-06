@@ -7,3 +7,6 @@ __pycache__/
 
 # macOS metadata
 .DS_Store
+
+# Visual Studio Code settings
+.vscode/
