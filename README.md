@@ -20,7 +20,7 @@ python3 scripts/tei_to_rdf.py
 python3 scripts/csv_to_rdf.py
 ```
 
-## Academic context
+## Academic context
 
 This project was developed as the individual final project for Information Science and Cultural Heritage (LM), A.Y. 2025/2026, taught by Francesca Tomasi and Marilena Daquino within the Master's Degree in Digital Humanities and Digital Knowledge at Alma Mater Studiorum – Università di Bologna.
 
