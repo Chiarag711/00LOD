@@ -1537,28 +1537,6 @@ body.dossier-open {
     transform: translateX(-50%);
 }
 
-.idea-map img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    background: #f3eee3;
-
-    border: 1px solid rgba(198, 161, 91, 0.18);
-}
-
-.idea-map figcaption {
-    margin-top: 0.8rem;
-
-    color: var(--muted);
-
-    font-family: "IBM Plex Mono", Consolas, monospace;
-    font-size: 0.64rem;
-
-    letter-spacing: 0.04em;
-}
-
 
 /* ---------------------------------
    Continue exploring
@@ -2070,14 +2048,6 @@ tr:hover td {
 
     .html-preview {
         height: 560px;
-    }
-
-    .html-output summary {
-        grid-template-columns: 1fr auto;
-    }
-
-    .html-output summary span:last-of-type {
-        display: none;
     }
 }
 
