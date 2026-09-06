@@ -457,6 +457,18 @@ document
         }
     });
 
+// ---------------------------------
+// Static code examples
+// ---------------------------------
+
+if (window.hljs) {
+    document
+        .querySelectorAll('pre code[class*="language-"]:not([data-file-preview])')
+        .forEach(code => {
+            hljs.highlightElement(code);
+        });
+}
+
 
 // ---------------------------------
 // CSV tables

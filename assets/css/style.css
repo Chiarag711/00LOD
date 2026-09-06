@@ -449,6 +449,16 @@ main {
     margin-bottom: 1.5rem;
 }
 
+.section > p:not(.eyebrow) a {
+    text-underline-offset: 0.18em;
+
+    transition: color 0.2s ease;
+}
+
+.section > p:not(.eyebrow) a:hover {
+    color: var(--gold-light);
+}
+
 /* ---------------------------------
    Project brief
 ---------------------------------- */

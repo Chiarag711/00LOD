@@ -68,12 +68,33 @@
             </p>
 
             <p>
-                The TEI header records the source and the entities required by the selected text,
-                associates local identifiers with external authority URIs through <code>@sameAs</code>,
-                defines the classifications used by the project and includes a
-                <code>&lt;listRelation&gt;</code> expressing the semantic relations that apply to the
-                encoded sample.
+                The TEI header documents the source, defines the entities required by the selected text
+                and records the classifications used in the project.
             </p>
+
+            <h3>Entity annotation and relations</h3>
+
+            <p>
+                The selected works, people, organisations, objects and events receive local identifiers
+                and, where available, are reconciled with external authority resources through
+                <code>@sameAs</code>. Semantic relations are recorded in
+                <code>&lt;listRelation&gt;</code>, where <code>@active</code>,
+                <code>@name</code> and <code>@passive</code> correspond respectively to the subject,
+                predicate and object later used by the TEI-to-RDF transformation.
+            </p>
+
+            <p>
+                A simplified example of the encoding pattern is shown below.
+            </p>
+
+            <pre><code class="language-xml">
+            &lt;person xml:id="ian_fleming" 
+                sameAs="http://viaf.org/viaf/51689472" 
+                role="author"&gt;
+                &lt;persName&gt;Ian Fleming&lt;/persName&gt;
+            &lt;/person&gt;
+
+            &lt;relation active="#james_bond" name="dbo:affiliation" passive="#mi6"/&gt;</code></pre>
 
             <h3>TEI/XML document</h3>
 
